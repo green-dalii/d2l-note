@@ -12,14 +12,7 @@
 - Fork完后，你可以选择直接在Gitee上在线编辑你自己的笔记，或者将已Fork项目从**你的Gitee**上Clone到自己计算机中，在本地使用VSCode编辑，具体操作参考👉[这里](https://gitee.com/help/articles/4192#article-header0)。*注：这种办法不能获取本项目最新的内容更新，只能在Fork时的基础上加入自己的修改*
 
 ## 协同记录：
-如果想要实时保持项目更新同时将修改合并到本项目，首先在完成Fork及Clone操作后，在当前项目环境下使用命令：
-- `git remote add upstream https://gitee.com/greener/d2l-note.git`
-
-来指定本上游分支。
-
-**每次编辑前**，请先同步你的Gitee远程仓库和上游分支，并Merge，编辑结束后需要将本地修改commit、push到你的Gitee，具体操作参考👉[这里](http://softlab.sdut.edu.cn/blog/subaochen/2016/01/github%e7%9a%84fork%e5%92%8c%e4%b8%8a%e6%b8%b8%e9%a1%b9%e7%9b%ae%e5%90%8c%e6%ad%a5%e7%9a%84%e6%96%b9%e6%b3%95/)。实际通过VSCode可以方便的进行可视化操作。
-
-再在Gitee上向本项目PullRequest。
+通过Git系统与Gitee平台，可以实现笔记的多人在线协作🤹‍♀️共同写作，具体方法参考第三章内容👉[Git快速入门](03-Git快速入门.md)
 
 
 ## 其他参考公开课资源
