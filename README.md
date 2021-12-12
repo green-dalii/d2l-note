@@ -8,6 +8,7 @@
   - [Git下载地址](https://npm.taobao.org/mirrors/git-for-windows/v2.31.1.windows.1/Git-2.31.1-32-bit.exe)
 - 《动手学深度学习》公开课视频点击👉[此处](https://space.bilibili.com/1567748478/channel/seriesdetail?sid=358497)，目前课程已完结。课程文档**D2L**链接点击👉[此处](https://zh-v2.d2l.ai/)
 - 为方便索引使用，每节课的笔记文件名必须规范为 **“序号-本节课程视频名称”** （如：“ *08-线性回归 + 基础优化算法 .md* ” ）
+- 若需在笔记中插入图片，推荐使用可靠的外链，如需插入本地图片，可先修改图片名称并上传至仓库的`Images`文件夹，再在Markdown中使用相对URL进行引用。
 
 
 ## 多人在线协同：
