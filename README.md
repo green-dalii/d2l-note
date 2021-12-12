@@ -11,7 +11,7 @@
 - 初次使用时，需要将本项目Fork到你的Gitee中，具体步骤可以参考👉[这里](https://gitee.com/help/articles/4128#article-header0)
 - Fork完后，你可以选择直接在Gitee上在线编辑你自己的笔记，或者将已Fork项目从**你的Gitee**上Clone到自己计算机中，在本地使用VSCode编辑，具体操作参考👉[这里](https://gitee.com/help/articles/4192#article-header0)。*注：这种办法不能获取本项目最新的内容更新，只能在Fork时的基础上加入自己的修改*
 
-## 协同记录：
+## 多人在线协同：
 通过Git系统与Gitee平台，可以实现笔记的多人在线协作🤹‍♀️共同写作，具体方法参考第三章内容👉[Git快速入门](03-Git快速入门.md)
 
 
@@ -21,6 +21,7 @@
 - [斯坦福大学 EE104《机器学习导论》课程(2020) by Sanjay Lall](https://www.bilibili.com/video/BV17A411N7pQ)
 - [图宾根大学《概率机器学习》课程(2021) by Philipp Hennig](https://www.bilibili.com/video/BV1KA411V7Sd)
 - [机器学习凸优化：算法和复杂性 by Sebastien Bubeck](https://www.bilibili.com/video/BV1Vt411T7mK)
+- 🙌[斯坦福2021秋季CS329P·实用机器学习课程](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=28144)
 ### 深度学习预备知识：
 - [MIT 18.06SC 线性代数，2011辅导课](https://www.bilibili.com/video/BV18W411v77N?p=5)
 - [台大《深度学习优化方法》课程(2021) by Chih-Jen Lin](https://www.bilibili.com/video/BV1CB4y1F7kM?p=2)
@@ -44,3 +45,7 @@
 ### 强化学习：
 - [多伦多大学《强化学习导论》课程(2021) by Amir-massoud Farahmand](https://www.bilibili.com/video/BV1dA411N7E1)
 - [深度强化学习（David Silver）](https://www.bilibili.com/video/BV1x54y1W7k7)
+
+### 论文精读项目
+- [跟李沐学AI《深度学习论文精读》系列视频](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=32744)，👉[Github](https://github.com/mli/paper-reading)
+- [沈向洋带你读论文系列视频](https://space.bilibili.com/1706874133/video)，👉[ReadPaper学术讨论社区](https://readpaper.com/)
