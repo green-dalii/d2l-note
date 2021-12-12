@@ -3,7 +3,8 @@
 ## 使用说明：
 
 - 所有笔记将采用**Markdown**格式进行编排,推荐使用**VSCode**来编写。
-  - [Markdown语法快速入门点这里](https://markdown.com.cn)
+  - [Markdown基本语法快速入门点这里](https://markdown.com.cn)
+  - Markdown数学公式语法👉[链接1](https://blog.csdn.net/weixin_42782150/article/details/104878759)、[链接2](https://blog.csdn.net/dss_dssssd/article/details/82692894)
   - [VSCode下载点这里](https://code.visualstudio.com/)  ||  
   - [Git下载地址](https://npm.taobao.org/mirrors/git-for-windows/v2.31.1.windows.1/Git-2.31.1-32-bit.exe)
 - 《动手学深度学习》公开课视频点击👉[此处](https://space.bilibili.com/1567748478/channel/seriesdetail?sid=358497)，目前课程已完结。课程文档**D2L**链接点击👉[此处](https://zh-v2.d2l.ai/)
