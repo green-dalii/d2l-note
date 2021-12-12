@@ -6,13 +6,11 @@
   - [Markdown语法快速入门点这里](https://markdown.com.cn)
   - [VSCode下载点这里](https://code.visualstudio.com/)  ||  
   - [Git下载地址](https://npm.taobao.org/mirrors/git-for-windows/v2.31.1.windows.1/Git-2.31.1-32-bit.exe)
-- 《动手学深度学习》公开课视频点击👉[此处](https://space.bilibili.com/1567748478/video)，目前课程正在更新中，每周六13：00会进行新课的视频直播，B站每周会更新录播内容。课程文档链接点击👉[此处](https://zh-v2.d2l.ai/)
-- 为方便使用，每节课的笔记文件名定为 **“序号-本节课程视频名称”** （如：“ *08-线性回归 + 基础优化算法 .md* ” ）
-- 初次使用时，需要将本项目Fork到你的Gitee中，具体步骤可以参考👉[这里](https://gitee.com/help/articles/4128#article-header0)
-- Fork完后，你可以选择直接在Gitee上在线编辑你自己的笔记，或者将已Fork项目从**你的Gitee**上Clone到自己计算机中，在本地使用VSCode编辑，具体操作参考👉[这里](https://gitee.com/help/articles/4192#article-header0)。*注：这种办法不能获取本项目最新的内容更新，只能在Fork时的基础上加入自己的修改*
+- 《动手学深度学习》公开课视频点击👉[此处](https://space.bilibili.com/1567748478/channel/seriesdetail?sid=358497)，目前课程已完结。课程文档**D2L**链接点击👉[此处](https://zh-v2.d2l.ai/)
+
 
 ## 多人在线协同：
-通过Git系统与Gitee平台，可以实现笔记的多人在线协作🤹‍♀️共同写作，具体方法参考第三章内容👉[Git快速入门](03-Git快速入门.md)
+通过Git版本控制系统与Gitee平台，可以实现笔记的多人在线协作🤹‍♀️共同写作，具体方法参考第三章内容👉[Git快速入门](03-Git快速入门.md)
 
 
 ## 其他参考公开课资源
