@@ -321,6 +321,7 @@ class Accumulator:
 
 evaluate_accuracy(net, test_iter)
 ```
+
 以上完成了所有数据迭代一次的初始精确度，是10%左右。
 
 8. Softmax训练函数
@@ -336,16 +337,19 @@ def train_epoch_ch3(net, train_iter, loss, updater):
         y_hat = net(X)
         l = loss(y_hat, y)
         #如果是调用包，已经求和过，返回的是ln(softmax(正确预测的实值))
+        # train_iter可以看作一个迭代器，每次取batch_size=256的数据集训练一组，然后再换下一组训练，直至60000个数据都训练结束。
         if isinstance(updater, torch.optim.Optimizer):
             #torch.optim.Optimizer是torch优化器的包
             updater.zero_grad()
             #updater返回一个小批量，格式化梯度。
             l.backward()
+            #自带的loss求了平均
             updater.step()
             #Optimizer更新小批量
             metric.add(
             float(l) * len(y), accuracy(y_hat, y),
             y.size().numel())
+            #所以要乘以len(y)求loss之和。
             #float(l) * len(y)算出来的应该不是损失数，而是衡量损失的一个浮点数。
         else:
             l.sum().backward()
@@ -466,3 +470,67 @@ def predict_ch3(net, test_iter, n=10):  #@save
 predict_ch3(net, test_iter)
 ```
 ![测试集预测结果](Images/预测结果.png)
+
+## Softmax的简易实现
+
+1. 引入包
+
+```
+import torch
+from torch import nn
+from d2l import torch as d2l
+
+batch_size = 256
+train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
+```
+
+2. 定义学习网络
+
+```
+net = nn.Sequential(nn.Flatten(), nn.Linear(784, 10))
+## Sequential()函数打包模块序列，使运算按顺序进行，即Flatten的output是Linear的input。
+## Flatten()函数把任意维度tensor转化为向量=reshape()
+## Linear()函数,input=784是输入的features，output=10是输出的features
+## Linear()函数,自带weight和bias（default=True）属性，如果没有指定，系统会用内置算法提供初始权重和偏差。
+## Liner()函数对输入特征进行y=Wx+b的线性变换。
+def init_weights(m):
+    # m是当前layer,或者说是module
+    if type(m)  == nn.Linearear:
+        # 判断当前层是否是线性变换层
+        nn.init.normal_(m.weight, std=0.01)
+        # 初始化权重层
+        # torch.nn.init.normal_(tensor, mean=0.0, std=1.0)
+        # fills the input Tensor with values drawn from the normal distribution 
+
+net.apply(init_weights)
+## apply(fn)函数的input是一个函数，对net里的每一个模块都进行fn函数的操作。
+```
+
+3. 交叉熵损失以及softmax
+
+```
+loss = nn.CrossEntropyLoss()
+# l = loss(y_hat, y)
+# CrossEntropyLoss()函数计算input(y_hat)与target(y)的交叉熵损失。
+# CrossEntropyLoss()函数嵌套了Softmax运算。
+# CrossEntropyLoss()函数的默认reduction=mean，表示对所有损失之和求平均。
+```
+
+4. 训练
+
+```
+trainer = torch.optim.SGD(net.parameters(), lr=0.1)
+
+## net.parameters()方法返回模块参数的迭代器。
+## torch.optim.SGD()对传入参数进行SGD运算
+## SGD的step()方法，进行一次sgd算法
+## SGD的zero_grad()方法，随所有训练梯度清零。
+##对应前方的updater
+##        if isinstance(updater, torch.optim.Optimizer):
+##            updater.zero_grad() 先清零
+##            l.backward()        再求导  
+##            updater.step()      一次参数优化
+
+num_epochs = 10
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
+```
