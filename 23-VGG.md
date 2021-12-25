@@ -1,4 +1,4 @@
-## 使用块的网络——VGG
+## 使用块的网络——VGG(Visual Geometry Group)
 
 A比L更深更大以期获得更好的精度，能不能更深更大？
 
