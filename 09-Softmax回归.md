@@ -79,7 +79,7 @@ trans = transforms.ToTensor()
 #ToTensor()把IPL图片转化为Tensor
 #并除以255使所有像素均值在0-1之间
 mnist_train = torchvision.datasets.FashionMNIST(root="../data", train=True, transform=trans, download=False)
-#从FashionMNIST拿训练数据，没有则下载，transform代表改变图像为张量。
+#从FashionMNIST拿训练数据，没有则下载，transform=trans代表改变图像为张量。
 mnist_test = torchvision.datasets.FashionMNIST(root="../data", train=False, transform=trans, download=False)
 #从FashionMNIST拿测试数据
 len(mnist_train), len(mnist_test)
