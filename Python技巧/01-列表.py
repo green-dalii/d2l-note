@@ -17,3 +17,32 @@ L += list1
 print(L)
 ## output: [0, 1, 2, 3, 4]
 
+'''
+列表作用于字符串，把字符串拆开传入
+'''
+
+list('happy')
+## output: ['h', 'a', 'p', 'p', 'y']
+
+##　Tip 2:
+
+'''
+列表生成式可以双重嵌套
+'''
+list1 = [[1, 2], [3, 4]]
+[x for list2 in list1 for x in list2]
+
+## output: [1, 2, 3, 4]
+'''
+也可以实现条件判断
+'''
+list2 = [3, 4, 6, 7]
+[x for x in list2 if x > 5]
+## output: [6, 7]
+
+'''
+补全条件需要改变顺序
+'''
+list3 = [3, 4, 6, 7]
+[x if x < 5 else x - 1 for x in list2 ]
+## output: [3, 4, 5, 6]
