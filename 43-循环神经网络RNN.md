@@ -6,7 +6,7 @@
   - 去掉了 $\bf W_{hh}h_{t-1}$ 就是MLP
   - $\bf W_{hh}$ 就用来存储时序信息
 - 输出：$\bf o_t=\phi(W_{ho}h_t+b_o)$
-
+- 激活函数为 $\phi$
 ![](\Images/043-01.gif)
 
 **困惑度(Perplexity)**
