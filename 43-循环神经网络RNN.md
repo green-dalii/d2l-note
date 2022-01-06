@@ -2,6 +2,8 @@
 
 ### 循环神经网络
 
+![](\Images/043-addition.gif)
+
 - 更新隐藏状态：$\bf h_t=\phi(W_{hh}h_{t-1}+W_{hx}x_{t-1}+b_h)$
   - 去掉了 $\bf W_{hh}h_{t-1}$ 就是MLP
   - $\bf W_{hh}$ 就用来存储时序信息
