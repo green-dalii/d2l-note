@@ -53,5 +53,5 @@
 
 ### 深度学习计算平台
 - [Amazon Sagemaker Studio Lab（🙌Free GPU!）](https://studiolab.sagemaker.aws/)
-- [Google Colab（科学上网,Free GPU）](https://colab.research.google.com/)
+- [Google Colab（梯子,Free GPU）](https://colab.research.google.com/)
 - [AutoDL（按需租用，价格较低）](https://www.autodl.com/)
