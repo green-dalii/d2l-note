@@ -50,3 +50,8 @@
 ### 论文精读项目
 - [跟李沐学AI《深度学习论文精读》系列视频](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=32744)，👉[Github](https://github.com/mli/paper-reading)
 - [沈向洋带你读论文系列视频](https://space.bilibili.com/1706874133/video)，👉[ReadPaper学术讨论社区](https://readpaper.com/)
+
+### 深度学习计算平台
+- [Amazon Sagemaker Studio Lab（🙌Free GPU!）](https://studiolab.sagemaker.aws/)
+- [Google Colab（科学上网,Free GPU）](https://colab.research.google.com/)
+- [AutoDL（按需租用，价格较低）](https://www.autodl.com/)
