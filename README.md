@@ -2,13 +2,13 @@
 # 《动手学深度学习》的课程笔记
 ## 使用说明：
 
+- 为方便索引使用，每节课的笔记文件名必须规范为 **“序号-本节课程视频名称”** （如：“ *08-线性回归 + 基础优化算法 .md* ” ）
 - 所有笔记将采用**Markdown**格式进行编排,推荐使用**VSCode**来编写。
   - [Markdown基本语法快速入门点这里](https://markdown.com.cn)
   - Markdown数学公式语法👉[链接1](https://blog.csdn.net/weixin_42782150/article/details/104878759)、[链接2](https://blog.csdn.net/dss_dssssd/article/details/82692894)
   - [VSCode下载点这里](https://code.visualstudio.com/)  ||  
   - [Git下载地址](https://npm.taobao.org/mirrors/git-for-windows/v2.31.1.windows.1/Git-2.31.1-32-bit.exe)
 - 《动手学深度学习》公开课视频点击👉[此处](https://space.bilibili.com/1567748478/channel/seriesdetail?sid=358497)，目前课程已完结。课程文档**D2L**链接点击👉[此处](https://zh-v2.d2l.ai/)
-- 为方便索引使用，每节课的笔记文件名必须规范为 **“序号-本节课程视频名称”** （如：“ *08-线性回归 + 基础优化算法 .md* ” ）
 - 若需在笔记中插入图片，推荐使用可靠的外链，如需插入本地图片，可先修改图片名称并上传至仓库的`Images`文件夹，再在Markdown中使用相对URL进行引用。
 
 
@@ -51,7 +51,17 @@
 - [跟李沐学AI《深度学习论文精读》系列视频](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=32744)，👉[Github](https://github.com/mli/paper-reading)
 - [沈向洋带你读论文系列视频](https://space.bilibili.com/1706874133/video)，👉[ReadPaper学术讨论社区](https://readpaper.com/)
 
+### 主流深度学习框架
+- **Pytorch**：Meta（原Facebook）出品，席卷科研界，目前已与Caffe2合并，代码友好，文档清晰，性能一般👉[项目主页](https://pytorch.org)
+- **Tensorflow**：Google出品，席卷工业界，部署成熟，性能尚可，生态应用广泛，但代码、文档较混乱👉[项目主页](https://tensorflow.google.cn/)
+- **MXNet**：**沐神**团队出品，Apach、亚马逊支持，D2L项目优先推荐，设计理念优秀，性能出色，但目前生态较弱，发展受限👉[项目主页](https://mxnet.incubator.apache.org/)
+- **MindSpore**：昇思，华为出品，优势在于可与华为硬件高效协同，生态优势仅限华为系👉[项目主页](https://www.mindspore.cn/)
+- **Jittor**：计图，清华大神**梁盾**主导开发（类似沐神），贾扬清大神高度评价👉[项目主页](https://cg.cs.tsinghua.edu.cn/jittor/)
+- **OneFlow**：一流，大神**袁进辉**团队出品，设计优秀，在公开Benchmark跑出“近乎玄学”的性能第一出色成绩👏👏👏，就是文档偏弱，主页有些Low（跑题了）👉[项目主页](http://oneflow.ai/a/chanpin/oneflow/)
+- **PaddlePaddle**：飞浆，百度出品，代码开发实现出色，贾扬清大神高度评价，不过文档有些混乱，推广有些“用力过猛”👉[项目主页](https://www.paddlepaddle.org.cn/)
+- **MegEngine**：天元，旷世科技出品👉[项目主页](https://megengine.org.cn/)
+
 ### 深度学习计算平台
 - [Amazon Sagemaker Studio Lab（🙌Free GPU!）](https://studiolab.sagemaker.aws/)
-- [Google Colab（梯子,Free GPU）](https://colab.research.google.com/)
+- [Google Colab（需梯子,Free GPU）](https://colab.research.google.com/)
 - [AutoDL（按需租用，价格较低）](https://www.autodl.com/)
