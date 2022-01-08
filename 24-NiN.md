@@ -1,3 +1,9 @@
+# 24 - 网络中的网络NiN
+
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i2.hdslb.com/bfs/archive/d20ed4243d80ed7d2c047bc421254b5ff2797c8e.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1Uv411G71b)
 ## Net in Network
 
 **全连接层的问题**

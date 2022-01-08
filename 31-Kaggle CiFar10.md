@@ -1,3 +1,9 @@
+# 31 - Kaggle实战 - CIFAR-10
+
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i2.hdslb.com/bfs/archive/1060d9d14c8d840fefaf6972f8b539d05655aa5d.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1Gy4y1M7Cu)
 ### 训练集、验证集、测试集
 
 我们将数据划分训练集、验证集和测试集。在训练集上训练模型，在验证集上评估模型，一旦找到的最佳的参数，就在测试集上最后测试一次，测试集上的误差作为泛化误差的近似。

@@ -1,3 +1,9 @@
+# 44 - 门控循环单元GRU
+
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](	https://i0.hdslb.com/bfs/archive/9e885e1474ec2740721104ab3262eabeb44cf317.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1mf4y157N2)
 ## 门控循环单元(GRU, gated recurrent unit)
 
 ![](Images/044-04.gif)

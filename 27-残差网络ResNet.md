@@ -1,3 +1,9 @@
+# 27 - 残差网络ResNet
+
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i2.hdslb.com/bfs/archive/300fb344d7e0f1fb18e169c9ed3ecb7af8841143.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1bV41177ap)
 ## ResNet
 
 **Problem**：加更多的层总是改善精度吗？

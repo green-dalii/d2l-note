@@ -1,3 +1,10 @@
+# 43 - 循环神经网络RNN
+
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i2.hdslb.com/bfs/archive/9f357cf3d856d9497eb3d0c6e86868e7d1b253a6.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1D64y1z7CA)
+[![Bilibil](https://i0.hdslb.com/bfs/archive/c5b59337e4e102a48da7bada38ea372b27774009.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1kq4y1H7sw)
 ## 循环神经网络(RNN, Recurrent Neural Network)
 
 ### 循环神经网络
