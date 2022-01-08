@@ -1,6 +1,9 @@
 # 21 - 经典卷积神经网络LeNet
 
-### 🎦 本节课程视频地址 👉[![Bilibil](https://i2.hdslb.com/bfs/archive/31bbec5db68b26ae5c86a5c7a6ac5b52f5751de1.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1t44y1r7ct)
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i2.hdslb.com/bfs/archive/31bbec5db68b26ae5c86a5c7a6ac5b52f5751de1.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1t44y1r7ct)
 ### MNIST
 
 50000训练数据集；10000测试数据集，图像大小28x28，10类(0-9)。

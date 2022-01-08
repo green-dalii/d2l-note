@@ -1,5 +1,8 @@
 # 09 - Softmax回归
-### 🎦 本节课程视频地址 👉[![Bilibil](https://i0.hdslb.com/bfs/archive/c06a4441d28bb48a5e7a5d73e68578d50d2783da.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1K64y1Q7wu)
+
+---
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i0.hdslb.com/bfs/archive/c06a4441d28bb48a5e7a5d73e68578d50d2783da.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1K64y1Q7wu)
 
 **是以回归之名的分类**
 

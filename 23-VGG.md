@@ -1,6 +1,9 @@
 # 23 - 使用块的网络VGG
 
-### 🎦 本节课程视频地址 👉[![Bilibil](https://i1.hdslb.com/bfs/archive/4fbdc632ed7cbf51e5097fc1c10c196887376775.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1Ao4y117Pd)
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i1.hdslb.com/bfs/archive/4fbdc632ed7cbf51e5097fc1c10c196887376775.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1Ao4y117Pd)
 ## 使用块的网络——VGG(Visual Geometry Group)
 
 A比L更深更大以期获得更好的精度，能不能更深更大？

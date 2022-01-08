@@ -1,6 +1,9 @@
 # 50 - 序列到序列学习Seq2Seq
 
-### 🎦 本节课程视频地址 👉[![Bilibil](https://i2.hdslb.com/bfs/archive/089fcabf684d79aee5561546acb5986680509914.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV16g411L7FG)
+---
+
+### 🎦 本节课程视频地址 👉
+[![Bilibil](https://i2.hdslb.com/bfs/archive/089fcabf684d79aee5561546acb5986680509914.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV16g411L7FG)
 ## 序列到序列
 
 - 给定一个源语言的句子，自动翻译成目标语言
