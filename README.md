@@ -22,7 +22,8 @@
 - [斯坦福大学 EE104《机器学习导论》课程(2020) by Sanjay Lall](https://www.bilibili.com/video/BV17A411N7pQ)
 - [图宾根大学《概率机器学习》课程(2021) by Philipp Hennig](https://www.bilibili.com/video/BV1KA411V7Sd)
 - [机器学习凸优化：算法和复杂性 by Sebastien Bubeck](https://www.bilibili.com/video/BV1Vt411T7mK)
-- 🙌[斯坦福2021秋季CS329P·实用机器学习课程](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=28144)
+- [斯坦福2021秋季CS329P·实用机器学习课程 - 李沐🙌🙌🙌](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=28144)
+- [生产中的机器学习(MLOps) - 吴恩达🙌🙌🙌](https://www.bilibili.com/video/BV1ji4y197pv)
 ### 深度学习预备知识：
 - [MIT 18.06SC 线性代数，2011辅导课](https://www.bilibili.com/video/BV18W411v77N?p=5)
 - [台大《深度学习优化方法》课程(2021) by Chih-Jen Lin](https://www.bilibili.com/video/BV1CB4y1F7kM?p=2)
@@ -51,7 +52,7 @@
 - [跟李沐学AI《深度学习论文精读》系列视频](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=32744)，👉[Github](https://github.com/mli/paper-reading)
 - [沈向洋带你读论文系列视频](https://space.bilibili.com/1706874133/video)，👉[ReadPaper学术讨论社区](https://readpaper.com/)
 
-### 主流深度学习框架
+## 主流深度学习框架
 - **Pytorch**：Meta（原Facebook）出品，席卷科研界，目前已与Caffe2合并，代码友好，文档清晰，性能一般👉[项目主页](https://pytorch.org)
 - **Tensorflow**：Google出品，席卷工业界，部署成熟，性能尚可，生态应用广泛，但代码、文档较混乱👉[项目主页](https://tensorflow.google.cn/)
 - **MXNet**：**沐神**团队出品，Apach、亚马逊支持，D2L项目优先推荐，设计理念优秀，性能出色，但目前生态较弱，发展受限👉[项目主页](https://mxnet.incubator.apache.org/)
@@ -61,7 +62,7 @@
 - **PaddlePaddle**：飞浆，百度出品，代码开发实现出色，贾扬清大神高度评价，不过文档有些混乱，推广有些“用力过猛”👉[项目主页](https://www.paddlepaddle.org.cn/)
 - **MegEngine**：天元，旷世科技出品👉[项目主页](https://megengine.org.cn/)
 
-### 深度学习计算平台
+## 深度学习计算平台
 - [Amazon Sagemaker Studio Lab（🙌Free GPU!）](https://studiolab.sagemaker.aws/)
 - [Google Colab（需梯子,Free GPU）](https://colab.research.google.com/)
 - [AutoDL（按需租用，价格较低）](https://www.autodl.com/)
