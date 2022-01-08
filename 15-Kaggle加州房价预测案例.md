@@ -1,3 +1,7 @@
+# 15 - Kaggle加州房价预测实战
+
+### 🎦 本节课程视频地址 👉[![Bilibil](https://i0.hdslb.com/bfs/archive/d66e2524575703d66340b8fd486793523fc5c32f.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1NK4y1P7Tu?spm_id_from=333.999.0.0)
+
 **准备工作——导入包/下载数据**
 ```
 import hashlib 

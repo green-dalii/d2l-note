@@ -1,3 +1,7 @@
+# 35 - SSD实现
+
+### 🎦 本节课程视频地址 👉[![Bilibil](https://i2.hdslb.com/bfs/archive/5727467abfa7e461b648acf5156602b044dba730.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1ZX4y1c7Sw)
+
 <font face='微软雅黑'>一点感想：写程序在时分块，层层嵌套，优先定义最基本的功能，再逐层调用到高级功能上，最终实现整套程序。一则程序的独立性高，可以多次调用；二则方便debug；三则每部分代码不必过于冗长，方便理解。</font>
 
 **导入包和生成锚框**

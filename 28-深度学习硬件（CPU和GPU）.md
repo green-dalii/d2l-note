@@ -1,3 +1,9 @@
+# 28 - 深度学习硬件CPU、GPU、TPU和其他
+
+### 🎦 本节课程视频地址 👉[![Bilibil](	https://i2.hdslb.com/bfs/archive/8d8c0bed24f9fd3c760c3ca34ce992061824f371.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1TU4y1j7Wd)
+
+[![Bilibil](https://i1.hdslb.com/bfs/archive/6c4b1968346e5e66314f48311991b34b26244670.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1VV41147PC)
+
 以一台电脑配置为例：
 - CPU: Intel i7, 0.15TFLOPS
 - DDR4: 32GB

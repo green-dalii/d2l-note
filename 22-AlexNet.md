@@ -1,3 +1,6 @@
+# 22 - 深度卷积神经网络AlexNet
+
+### 🎦 本节课程视频地址 👉[![Bilibil](https://i2.hdslb.com/bfs/archive/d3ac6a33084e673003dfd4f16685419e891d1bc9.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1h54y1L7oe)
 ### deep learning 发展历程
 
 2000~ 核方法：有一套完整的数学模型，SVM
