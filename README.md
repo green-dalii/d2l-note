@@ -55,7 +55,7 @@
 ## 主流深度学习框架
 - **Pytorch**：Meta（原Facebook）出品，席卷科研界，目前已与Caffe2合并，代码友好，文档清晰，性能一般👉[项目主页](https://pytorch.org)
 - **Tensorflow**：Google出品，席卷工业界，部署成熟，性能尚可，生态应用广泛，但代码、文档较混乱👉[项目主页](https://tensorflow.google.cn/)
-- **MXNet**：**沐神**团队出品，Apach、亚马逊支持，D2L项目优先推荐，设计理念优秀，性能出色，但目前生态较弱，发展受限👉[项目主页](https://mxnet.incubator.apache.org/)
+- **MXNet**：**沐神**团队出品，Apache、亚马逊支持，D2L项目优先推荐，设计理念优秀，性能出色，但目前生态较弱，发展受限👉[项目主页](https://mxnet.incubator.apache.org/)
 - **MindSpore**：昇思，华为出品，优势在于可与华为硬件高效协同，生态优势仅限华为系👉[项目主页](https://www.mindspore.cn/)
 - **Jittor**：计图，清华大神**梁盾**主导开发（类似沐神），贾扬清大神高度评价👉[项目主页](https://cg.cs.tsinghua.edu.cn/jittor/)
 - **OneFlow**：一流，大神**袁进辉**团队出品，设计优秀，在公开Benchmark跑出“近乎玄学”的性能第一出色成绩👏👏👏，就是文档偏弱，主页有些Low（跑题了）👉[项目主页](http://oneflow.ai/a/chanpin/oneflow/)

@@ -1,41 +1,49 @@
-# 09 - Softmax回归
+# 09 - Softmax 回归
 
 ---
+
 ### 🎦 本节课程视频地址 👉
+
 [![Bilibil](https://i0.hdslb.com/bfs/archive/c06a4441d28bb48a5e7a5d73e68578d50d2783da.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1K64y1Q7wu)
 
-**是以回归之名的分类**
 
-回归估计一个连续值 VS 分类预测一个离散类别
 
-**回归**
+- **回归**
 
-单连续值输出
-自然区间R
-跟真实值的区别作为损失
+  - 单连续数值的输出
+  - 自然区间$\Bbb{R}$
+  - 跟真实值的区别作为损失（比如 MSE 损失）
 
-**分类**
+- **分类**
 
-通常多个输出  
-输出$i$表示预测为第$i$类的置信度
+  - 输出通常为多个离散值
+  - 输出的第$i$个元素表示预测为第$i$类的置信度
+  
+**Softmax 回归是以回归之名的分类算法**，Softmax回归也可以看作是拥有多个输出的单层神经网络：
 
-## 从回归到多类 —— 均方损失
+![](https://zh.d2l.ai/_images/softmaxreg.svg)
 
-对类别进行有效编码  
-$${\bf{y}}=[y_1, y_2,...,y_n]^T$$
-$$y_i=
-\left \{
+## 从回归到多类分类——均方损失
+
+- 对类别进行一位有效编码（即：One-hot 编码）  
+  $${\bf{y}}=[y_1, y_2,...,y_n]^T$$
+
+$$
+y_i=\left \{
 \begin{array}{l}
-1\ if\ i=y \\
-0\ otherwise
+1\ , \sf{if} \ \it{i=y} \\
+0\ , \sf{otherwise}
 \end{array}
 \right.
 $$
-使用均方损失训练  
-最大值最为预测（最大化$o_i$的置信度的值）
-$$\hat y = arg\,\max_{i}o_i$$
-无校验比例
+
+- 使用均方损失（MSE）训练
+
+- 最大值最为预测（最大化$o_i$的置信度的值）
+  $$\hat y = arg\,\max_{i}o_i$$
+
 ## 从回归到多类分类——无校验比例
+
 **需要更置信的识别正确类（大余量）**
 
 正确类的置信度要远大于其他非正确类的置信度，数学表示为一个阈值。
@@ -43,29 +51,45 @@ $$o_y-o_i\ge\Delta(y,i)$$
 
 ## 从回归到多类分类——校验比例
 
-输出匹配概率（非负，和为1）
-$$\hat{\bf y}=softmax({\bf o})$$
+要使输出匹配为概率（非负，和为 1），则需对输出${\bf{o}}$进行**Softmax**数学变换：
+$$\hat{\bf y}={\rm{softmax}}({\bf o})$$
+
+为保证**softmax**操作满足“非负，和为 1”，对其中每个类别置信度输出$\hat y_i$为：
+
 $$\hat y_i={\exp{o_i}\over\sum_k\exp{o_k}}$$
-预测概率$\hat{\bf{y}}$与真实概率$\bf{y}$的比较。
-## Softmax和交叉熵损失
-交叉熵通常用来衡量两个概率的区别：
+
+预测概率$\hat{\bf{y}}$与真实概率$\bf{y}$的做损失。
+
+## Softmax 和交叉熵损失
+
+在信息论中，**交叉熵(Corss Entropy)** 通常用来衡量基于相同事件测度的两个概率${p,q}$的区别大小：
+
 $${H(\bf{p},\bf{q})}=\sum_{i}-p_i\log(q_i)$$
+
 将他作为损失：
-$$L(\bf{y}-\hat{\bf{y}})=-\sum_{i}y_i\log\hat{y}=-\log\hat{y}_y$$
+$$l(\bf{y},\hat{\bf{y}})=\it{-\sum_{i}y_i\log\hat{y_i} = -\log\hat{y}_y}$$
+
 其梯度是真实概率与预测概率的区别：
-$$\partial_{o_i}L(\bf{y}-\hat{\bf{y}})=softmax({\bf o})_i-y_i$$
-# 损失函数
-**Huber's Robust Loss**
+$$\partial_{o_i}l(\bf{y},\hat{\bf{y}})=softmax({\bf o})_i-y_i$$
+
+## 损失函数
+
+为了互补L1损失原点不可导与L2损失原点外梯度过大的劣势，提出**Huber's Robust Loss**：
+
 $$
-L(y-y\prime)=
+l(y,y\prime)=
 \begin{cases}
-|y-y\prime|-{1\over2}&if\ |y-y\prime|\gt1\\
-{1\over2}(y-y\prime)^2&otherwise
+|y-y\prime|-{1\over2}&,if\ |y-y\prime|\gt1\\
+{1\over2}(y-y\prime)^2&,otherwise
 \end{cases}
 $$
-# 图像分类数据集读取
-图像分类中使用最为广泛的数据集**MNIST**，创造与1986，用于识别手写数字，过于简单，此处用较为复杂的**Fashion MNIST**。
+
+## 图像分类数据集读取
+
+图像分类中使用最为广泛的数据集**MNIST**，创造与 1986，用于识别手写数字，过于简单，此处用较为复杂的**Fashion MNIST**。
+
 - 导入各库
+
 ```
 %matplotlib inline
 import torch
@@ -76,7 +100,9 @@ from d2l import torch as d2l
 d2l.use_svg_display()
 #svg可放缩矢量图形，有利于图片的高清显示
 ```
+
 - 下载/导入数据
+
 ```
 trans = transforms.ToTensor()
 #ToTensor()把IPL图片转化为Tensor
@@ -87,13 +113,16 @@ mnist_test = torchvision.datasets.FashionMNIST(root="../data", train=False, tran
 #从FashionMNIST拿测试数据
 len(mnist_train), len(mnist_test)
 #结果分别为60000和10000张图片。
-mnist_train[0][0].shape #数据示例
+mnist_train[0][0].shape
+'''其中第一个维度代表图片索引（共60000张），第二个维度的第0维代表一张图片的Tensor表示（1x28x28），第1维代表图片所属Label（标量）'''
 #输出torch.Size([1, 28, 28])，1代表RGB通道，为黑白图片，长×宽=28×28
 ```
+
 - 两个可视化数据集的函数
+
 ```
-def get_fashion_mnist_labels(labels): 
-## 返回FashionMNIST的文本标签。 
+def get_fashion_mnist_labels(labels):
+## 返回FashionMNIST的文本标签。
     text_labels = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat',
                    'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
     return [text_labels[int(i)] for i in labels]
@@ -123,16 +152,20 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):  #titles=None
             ax.set_title(titles[i])
     return axes
 ```
+
 - 几个样本的图像和标签
+
 ```
 X, y = next(iter(data.DataLoader(mnist_train, batch_size=18)))
 show_images(X.reshape(18, 28, 28), 2, 9, titles=get_fashion_mnist_labels(y));
 ```
+
 - 读取一小批量图片
+
 ```
 batch_size = 256 #传入批量大小为256
 
-def get_dataloader_workers(): 
+def get_dataloader_workers():
     """使用4个进程来读取数据"""
     return 4
 
@@ -146,7 +179,9 @@ for X, y in train_iter:
 f'{timer.stop():.2f} sec'
 #⏲结束
 ```
+
 - 定义数据读取的函数
+
 ```
 def load_data_fashion_mnist(batch_size, resize=None):  #@save
     """下载Fashion-MNIST数据集，然后将其加载到内存中"""
@@ -167,8 +202,10 @@ def load_data_fashion_mnist(batch_size, resize=None):  #@save
             data.DataLoader(mnist_test, batch_size, shuffle=False,
                             num_workers=get_dataloader_workers()))
 ```
-## Softmax回归的从零开始实现
-1. 引入包
+
+## Softmax 回归的从零开始实现
+
+- 引入包
 
 ```
 import torch
@@ -178,7 +215,8 @@ from d2l import torch as d2l
 batch_size = 256
 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ```
-2. 定义初态
+
+- 定义权重
 
 ```
 num_inputs = 784
@@ -191,41 +229,46 @@ W = torch.normal(0, 0.01, size=(num_inputs, num_outputs), requires_grad=True)
 b = torch.zeros(num_outputs, requires_grad=True)
 #每个输出都有偏移
 ```
-对于任何一个输入${\bf{x}}\in(28\times28)$，转化为${\bf{x}}\in(1\times784)$
-输出维度${\bf{o}}\in(10\times1)$
-权重${\bf{W}}\in(784\times10)$
-偏差${\bf{b}}\in(1\times10)$
-对于一个批量$n$输入$X\in(n\times784)$
 
-3. 定义Softmax函数
+> 对于一张图片输入${\bf{x}}\in(28\times28)$，转化为行向量${\bf{x}}\in(1\times784)$，与权重${\bf{W}}\in(784\times10)$做内积，加上偏差${\bf{b}}\in(1\times10)$，得到结果矩阵$(1\times10)$
+
+- 定义 Softmax 函数
 
 $softmax({\bf{X}})_{ij}={\exp(X_{ij})\over\sum_k\exp(X_{ik})}$
+
+> 这里$X$代表一个batch的图片分类结果矩阵，每一行10个元素代表一张图片的分类标号，${\bf{X}}\in(batchsize\times10)$，所以要对行内求和
 
 ```
 def softmax(X):
     #对矩阵的每一行做softmax
     X_exp = torch.exp(X)
+    #按照行内求和
     partition = X_exp.sum(1, keepdim=True)
-    #按照列求和，输出维度784x1
+    #运用广播机制
     return X_exp / partition
-    #运用广播定律
 ```
-4. 定义模型
+
+- 定义模型
 
 ```
 def net(X):
     return softmax(torch.matmul(X.reshape(-1, W.shape[0]), W) + b)
     # matmul()是矩阵乘法
-    # reshape(-1, n)表示不知道具体多少行，一共n列，自行计算行数=矩阵元素总个数/赋值列数n。同理，可以定义随机列。
-    # 此处将同一批batch_size=256张图组成的三维，矩阵变成重整为二维。
+    # reshape(-1, n)中，“-1”表示在第二维为n条件下，自动推导第一维数值
+    # 此处将batch_size=256张图组成的四维张量（256x1x28x28），重整为二维矩阵（256x764）。
     # shape()返回维度的列表
 
 ```
-模型以类别预测的概率进行softmax计算后作为输出。
-${\bf{O}}={\bf{X}}{\bf{w}}+{\bf{b}}=[n\times784]\times[784\times10]+[1\times10]=[n\times10]+[1\times10]$
+
+模型以类别预测的概率进行 softmax 计算后作为输出。
+
+> ${\bf{O}}={\bf{X}}{\bf{w}}+{\bf{b}}=[n\times784]\times[784\times10]+[1\times10]=[n\times10]+[1\times10]$
+
 $[n\times10]+[1\times10]$服从广播定律，当两个总矩阵不同的矩阵做运算时，以维度相同的部分进行运算。
 以任意第$i$行为例：
-${\bf{O_i}}={\bf{X_i}}{\bf{w}}+{\bf{b}}=[o_{i1},o_{i2},...,o_{i10}]=[(x_{i1}w_{11}+x_{i2}w_{21}+,...,x_{i784}w_{784,1}+b_1),...,(x_{i1}w_{1,10}+x_{i2}w_{21}+,...,x_{i784}w_{784,10}+b_{10})]$
+
+> ${\bf{O_i}}={\bf{X_i}}{\bf{w}}+{\bf{b}}=[o_{i1},o_{i2},...,o_{i10}]=[(x_{i1}w_{11}+x_{i2}w_{21}+,...,x_{i784}w_{784,1}+b_1),...,(x_{i1}w_{1,10}+x_{i2}w_{21}+,...,x_{i784}w_{784,10}+b_{10})]$
+
 $output(\hat y) = softmax({\bf{O}})$
 
 - 代码技巧，根据标号索引
@@ -239,9 +282,9 @@ y_hat[[0, 1], y]
 [0.3, 0.2, 0.5]的索引为[2]值为0.5；
 ```
 
-5. 交叉熵损失
+- 交叉熵损失
 
-$$L(\bf{y}-\hat{\bf{y}})=-\sum_{i}y_i\log\hat{y}=-\log\hat{y}_y$$
+$$l(\bf{y},\hat{\bf{y}})=-\sum_{i}y_i\log\hat{y}=-\log\hat{y}_i$$
 
 ```
 def cross_entropy(y_hat, y):
@@ -252,38 +295,34 @@ def cross_entropy(y_hat, y):
 cross_entropy(y_hat, y)
 ```
 
-6. 统计分类正确的样本数量
+- 统计分类正确的样本数量
 
 ```
 def accuracy(y_hat, y):
     if len(y_hat.shape) > 1 and y_hat.shape[1] > 1:
         y_hat = y_hat.argmax(axis=1)
         #argmax/min()函数求的是对应行/列，最大最小值在该行/列所对应的索引，并返回一个数组。
-        #axis=0每列；axis=1,每行。
+        #axis=0纵向比较，返回行号；axis=1横向比较，返回列号。
         #此案例中，取出y_hat每行的最大值的索引，即预测的类别。
     cmp = y_hat.type(y.dtype) == y
-    #type(dtype=None)是函数，返回/修改数据的结构类型，如list、dict、numpy.ndarray；
-    #如果默认dtype,按原数据类型返回，如果定义了dtype，则将数据类型修改为dtype，并且返回修改后的数据。
-    #dtype是属性，返回数据的元素属性，如int, float, str。
-    #list、dict 等可以包含不同的数据类型，因此没有dtype属性。
-    #在tensor数据的比较里，按元素逐一比较，返回True or False的tensor。
+    '''type(dtype=None)方法，返回/修改数据的tensor结构类型
+    在tensor数据的比较里，按元素逐一比较，返回True or False的tensor。
+    布尔元素的类型转换，按照True1-False0进行。
+    accuracy函数最终返回正确预测样本数量。'''
     return float(cmp.type(y.dtype).sum())
-    #布尔元素的类型转换，按照True1-False0进行。
-    #accuracy函数最终返回正确预测样本数量。
 
+# 除以label y的长度，就是精度
 accuracy(y_hat, y) / len(y)
 ```
 
-7. 计算模型在指定数据集上的精度
+- 计算模型在指定数据集上的精度
 
 ```
 def evaluate_accuracy(net, data_iter):
     if isinstance(net, torch.nn.Module):
-        #isinstance() 函数来判断一个对象是否是一个已知的类型，会考虑继承
-        #torch.nn.Module是一个类。
+        #isinstance(obj,type) 函数来判断一个对象是否是一个已知的类型
         net.eval()
-        #eval()函数把模块设置为评估模式，相当于self.train(False)
-        #在此处引申为不计算梯度。
+        #eval()函数把模块设置为评估模式，只计算前馈，不计算梯度
     metric = Accumulator(2)
     #Accumulator是自定义的一个类，作为叠加器
     for X, y in data_iter:
@@ -293,23 +332,24 @@ def evaluate_accuracy(net, data_iter):
         # 循环就是把生成器里的所有元素遍历，计算总预测正确数和总样本数
     return metric[0] / metric[1]
 ```
+
 ```
 class Accumulator:
     def __init__(self, n):
         self.data = [0.0] * n
-        #类的实例，只传一个参，向量的长度n。
+        #类的实例，只传一个参，累加值个数n。
         #列表乘法
-        
+
     def add(self, *args):
         self.data = [a + float(b) for a, b in zip(self.data, args)]
-        #add()方法，预设动态参数
         #zip()把全零向量和args打包，self的值赋值给a，args赋值给b。
-        #zip()的返回值是一个对象，可以用list查看。
-    
+        #zip()的返回值是一个list对象
+
     def reset(self):
+        #累加器归零
         self.data = [0.0] * len(self.data)
-        #初始化self
         
+
     def __getitem__(self, idx):
         #self索引
         return self.data[idx]
@@ -325,44 +365,44 @@ class Accumulator:
 evaluate_accuracy(net, test_iter)
 ```
 
-以上完成了所有数据迭代一次的初始精确度，是10%左右。
+以上完成了测试数据集迭代一个batch的初始精确度，因为总共是10类，网络参数是随机化，所以精度是10%左右。
 
-8. Softmax训练函数
-   
+- Softmax 训练函数
+
 ```
 def train_epoch_ch3(net, train_iter, loss, updater):
     #判断函数是手动还是模块调用，提高函数适用性。
     if isinstance(net, torch.nn.Module):
         net.train()
-        ##train()函数与eval()函数先对应，可以理解为此处求导。
+        ##train()函数与eval()函数相对应，可以理解为此处启用求导。
     metric = Accumulator(3)
     for X, y in train_iter:
+        # train_iter可以看作一个迭代器，每次取batch_size=256的数据集训练一组，然后再换下一组训练，直至60000个数据都训练结束。
         y_hat = net(X)
         l = loss(y_hat, y)
-        #如果是调用包，已经求和过，返回的是ln(softmax(正确预测的实值))
-        # train_iter可以看作一个迭代器，每次取batch_size=256的数据集训练一组，然后再换下一组训练，直至60000个数据都训练结束。
+        #torch.optim.Optimizer是torch优化器的包
         if isinstance(updater, torch.optim.Optimizer):
-            #torch.optim.Optimizer是torch优化器的包
+            #updater归零梯度。
             updater.zero_grad()
-            #updater返回一个小批量，格式化梯度。
+            #自带的loss已求了平均
             l.backward()
-            #自带的loss求了平均
+            #Optimizer更新参数
             updater.step()
-            #Optimizer更新小批量
             metric.add(
             float(l) * len(y), accuracy(y_hat, y),
             y.size().numel())
-            #所以要乘以len(y)求loss之和。
-            #float(l) * len(y)算出来的应该不是损失数，而是衡量损失的一个浮点数。
+            # 因为一个batch求出的损失l是平均损失，乘len(y)代表恢复成一个batch的总损失
         else:
             l.sum().backward()
+            ## X是二维向量（256x764），此处updater需要传入批量大小参数，即第0维
             updater(X.shape[0])
-            ## X是三维向量，返回的就是批量大小
             metric.add(float(l.sum()), accuracy(y_hat, y), y.numel())
-        
+
     return metric[0] / metric[2], metric[1] / metric[2]
 ```
-9. 动画显示
+
+- 动画显示
+
 ```
 class Animator:
     def __init__(self, xlabel=None, ylabel=None, legend=None,
@@ -372,9 +412,9 @@ class Animator:
         # x/ylabel:x/y轴标签
         #legend:图例
         #x/ylim(x/ymin, x/ymax):x/y轴的上下极限。
-        #x/yscale：x/y轴比例
+        #x/yscale：x/y轴缩放比例
         #'-':实线,'m--'：品红色虚线, 'g-'：绿色实线, 'r:'：红色点线。
-        #nrows/ncols：行列数量。
+        #nrows/ncols：指定多子图行列数量。
         if legend is None:
             legend = []
         d2l.use_svg_display()
@@ -438,7 +478,7 @@ class Animator:
 
 ```
 
-11. 调用sgd优化方法
+11. 调用 sgd 优化方法
 
 ```
 lr = 0.1
@@ -454,7 +494,9 @@ def updater(batch_size):
 num_epochs = 10
 train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 ```
+
 ![数据集训练曲线](Images/曲线.png)
+
 13. 用测试集预测
 
 ```
@@ -472,9 +514,10 @@ def predict_ch3(net, test_iter, n=10):  #@save
 
 predict_ch3(net, test_iter)
 ```
+
 ![测试集预测结果](Images/预测结果.png)
 
-## Softmax的简易实现
+## Softmax 的简易实现
 
 1. 引入包
 
@@ -492,10 +535,10 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ```
 net = nn.Sequential(nn.Flatten(), nn.Linear(784, 10))
 ## Sequential()函数打包模块序列，使运算按顺序进行，即Flatten的output是Linear的input。
-## Flatten()函数把任意维度tensor转化为向量=reshape()
-## Linear()函数,input=784是输入的features，output=10是输出的features
+## Flatten()函数把任意维度tensor第0维保留，后续维“拉平”展开为第1维
+## Linear()函数,input=784是输入的features，output=10是输出
 ## Linear()函数,自带weight和bias（default=True）属性，如果没有指定，系统会用内置算法提供初始权重和偏差。
-## Liner()函数对输入特征进行y=Wx+b的线性变换。
+## Linear()函数对输入特征进行y=Wx+b的线性变换。
 def init_weights(m):
     # m是当前layer,或者说是module
     if type(m)  == nn.Linearear:
@@ -503,19 +546,19 @@ def init_weights(m):
         nn.init.normal_(m.weight, std=0.01)
         # 初始化权重层
         # torch.nn.init.normal_(tensor, mean=0.0, std=1.0)
-        # fills the input Tensor with values drawn from the normal distribution 
+        # fills the input Tensor with values drawn from the normal distribution
 
+# apply(fn)函数的参数是一个函数，对net里的每一层都进行fn函数的操作。
 net.apply(init_weights)
-## apply(fn)函数的input是一个函数，对net里的每一个模块都进行fn函数的操作。
 ```
 
-3. 交叉熵损失以及softmax
+3. 交叉熵损失以及 softmax
 
 ```
 loss = nn.CrossEntropyLoss()
 # l = loss(y_hat, y)
 # CrossEntropyLoss()函数计算input(y_hat)与target(y)的交叉熵损失。
-# CrossEntropyLoss()函数嵌套了Softmax运算。
+# CrossEntropyLoss()函数自带Softmax运算。
 # CrossEntropyLoss()函数的默认reduction=mean，表示对所有损失之和求平均。
 ```
 
@@ -531,9 +574,17 @@ trainer = torch.optim.SGD(net.parameters(), lr=0.1)
 ##对应前方的updater
 ##        if isinstance(updater, torch.optim.Optimizer):
 ##            updater.zero_grad() 先清零
-##            l.backward()        再求导  
+##            l.backward()        再求导
 ##            updater.step()      一次参数优化
 
 num_epochs = 10
 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 ```
+
+## Pytorch 模块参考文档
+
+- `torchvision.transfrom`Pytorch视觉处理模块中的图像变换和增广 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/torchvision/torchvision-transform/) | [官方英文](https://pytorch.org/vision/main/transforms.html)
+- `torchvision.dataset`Pytorch视觉处理模块中的数据集 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/torchvision/torchvision-datasets/) | [官方英文](https://pytorch.org/vision/main/datasets.html)
+- `torch.nn.Sequential()`Pytorch顺序神经网络容器 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html#torch.nn.Sequential)
+- `torch.nn.Flatten()`Pytorch展平层 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html#torch.nn.Flatten)
+- `torch.nn.CrossEntropyLoss()`Pytorch交叉熵损失函数 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions) | [官方英文](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss)
