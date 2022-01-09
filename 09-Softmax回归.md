@@ -54,6 +54,13 @@ $${H(\bf{p},\bf{q})}=\sum_{i}-p_i\log(q_i)$$
 $$L(\bf{y}-\hat{\bf{y}})=-\sum_{i}y_i\log\hat{y}=-\log\hat{y}_y$$
 其梯度是真实概率与预测概率的区别：
 $$\partial_{o_i}L(\bf{y}-\hat{\bf{y}})=softmax({\bf o})_i-y_i$$
+$$\begin{split}
+&{{\partial({\log\sum_{k=1}^q\exp(o_k)}-\sum_{j=1}^qy_jo_j)}\over\partial o_j}\\
+&={{\partial{\log\sum_{k=1}^q\exp(o_k)}}\over\partial o_j}-y_j\\
+&={\partial{\sum_{k=1}^q\exp(o_k)/\partial o_j}\over{\sum_{k=1}^q\exp(o_k)}}-y_j\\
+&={\exp(o_j)\over{\sum_{k=1}^q\exp(o_k)}}-y_j\\
+&=softmax(o_j)-y_j
+\end{split}$$
 # 损失函数
 **Huber's Robust Loss**
 $$
