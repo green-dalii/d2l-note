@@ -584,7 +584,12 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 ## Pytorch 模块参考文档
 
 - `torchvision.transfrom`Pytorch视觉处理模块中的图像变换和增广 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/torchvision/torchvision-transform/) | [官方英文](https://pytorch.org/vision/main/transforms.html)
-- `torchvision.dataset`Pytorch视觉处理模块中的数据集 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/torchvision/torchvision-datasets/) | [官方英文](https://pytorch.org/vision/main/datasets.html)
 - `torch.nn.Sequential()`Pytorch顺序神经网络容器 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html#torch.nn.Sequential)
 - `torch.nn.Flatten()`Pytorch展平层 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html#torch.nn.Flatten)
 - `torch.nn.CrossEntropyLoss()`Pytorch交叉熵损失函数 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions) | [官方英文](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss)
+
+---
+
+**Q：softmax解决的多分类问题，会不会出现类别不平衡？**
+
+**🙋‍♂️**：如果要用机器学习解决多分类问题，那么训练数据就要尽量保证各类都有充足的样本，且数量最好能接近均衡，这样学习算法才能更全面的提取各类的特征，如果某类训练数据过少，则模型对该类的预测也会不可靠。
