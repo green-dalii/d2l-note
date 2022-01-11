@@ -26,6 +26,7 @@
 - [生产中的机器学习(MLOps) - 吴恩达🙌🙌🙌](https://www.bilibili.com/video/BV1ji4y197pv)
 - [台大林轩田老师《机器学习基石》🙌🙌](https://www.bilibili.com/video/BV1Cx411i7op)
 - [台大林轩田老师《机器学习技法》🙌🙌](https://www.bilibili.com/video/BV1ix411i7yp)
+- [滑铁卢大学计算机教授Gautam-Kamath《机器学习入门》](https://www.bilibili.com/video/BV1pS4y1j7Jw)
 ### 深度学习预备知识：
 - [MIT 18.06SC 线性代数，2011辅导课](https://www.bilibili.com/video/BV18W411v77N?p=5)
 - [台大《深度学习优化方法》课程(2021) by Chih-Jen Lin](https://www.bilibili.com/video/BV1CB4y1F7kM?p=2)
