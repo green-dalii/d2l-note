@@ -586,7 +586,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 - `torchvision.transfrom`Pytorch视觉处理模块中的图像变换和增广 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/torchvision/torchvision-transform/) | [官方英文](https://pytorch.org/vision/main/transforms.html)
 - `torch.nn.Sequential()`Pytorch顺序神经网络容器 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html#torch.nn.Sequential)
 - `torch.nn.Flatten()`Pytorch展平层 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html#torch.nn.Flatten)
-- `torch.nn.CrossEntropyLoss()`Pytorch交叉熵损失函数 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions) | [官方英文](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss)
+- `torch.nn.CrossEntropyLoss(weight=None, size_average=None, ignore_index=- 100, reduce=None, reduction='mean', label_smoothing=0.0)`Pytorch交叉熵损失函数，默认输出为损失的平均 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions) | [官方英文](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss)
 
 ---
 
