@@ -29,12 +29,11 @@
   $${\bf{y}}=[y_1, y_2,...,y_n]^T$$
 
 $$
-y_i=\left \{
-\begin{array}{l}
-1\ , \sf{if} \ \it{i=y} \\
-0\ , \sf{otherwise}
-\end{array}
-\right.
+y_i=
+\begin{cases}
+1& \text{if i=y} \\
+0& \text{otherwise}
+\end{cases}
 $$
 
 - 使用均方损失（MSE）训练
