@@ -62,4 +62,4 @@ Markdown 支持插入 Latex 公式语法，分为两种写法：
 
 - [Markdown官方教程](https://markdown.com.cn/)
 - [LaTex数学公式语法手册](https://uinika.gitee.io/Zen/LaTex/)
-- WikiBooks《LaTeX/Mathematics》👉[网页版](https://en.m.wikibooks.org/wiki/LaTeX/Mathematics#) 👉[PDF版](LaTeX_Mathematics%20-%20Wikibooks.pdf)
+- WikiBooks《LaTeX/Mathematics》👉[网页版](https://en.m.wikibooks.org/wiki/LaTeX/Mathematics#) 👉[PDF版](https://www.aliyundrive.com/s/rNEwzrMEn2P)
