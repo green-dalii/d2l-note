@@ -20,6 +20,8 @@
 4. 重复第 2 步，选择`zh-cn`重启 VSCode，便切换为中文界面
 5. 继续在左侧打开扩展商店，在顶部搜素框输入`markdown`，安装如下扩展：
    ![step3](Images/git_tutorials_2.png)
+6. 安装完毕后，在编写Markdown文档时，点击顶部“放大镜🔍”图标，便可在右侧开启实时预览功能
+   ![step4](Images/git_tutorials_3.png)
 
 ## 基础语法
 
@@ -55,3 +57,7 @@ Markdown 支持插入 Latex 公式语法，分为两种写法：
 ![latex_2](Images/latex_2.webp)
 
 ![latex_3](Images/latex_3.webp)
+
+## 参考链接
+
+- [Markdown官方教程](https://markdown.com.cn/)
