@@ -6,8 +6,6 @@
 
 [![Bilibil](https://i0.hdslb.com/bfs/archive/c06a4441d28bb48a5e7a5d73e68578d50d2783da.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1K64y1Q7wu)
 
-
-
 - **回归**
 
   - 单连续数值的输出
@@ -21,7 +19,7 @@
   
 **Softmax 回归是以回归之名的分类算法**，Softmax回归也可以看作是拥有多个输出的单层神经网络：
 
-![](https://zh.d2l.ai/_images/softmaxreg.svg)
+![softmax](https://zh.d2l.ai/_images/softmaxreg.svg)
 
 ## 从回归到多类分类——均方损失
 
@@ -89,7 +87,7 @@ $$
 
 - 导入各库
 
-```
+```python
 %matplotlib inline
 import torch
 import torchvision
@@ -102,7 +100,7 @@ d2l.use_svg_display()
 
 - 下载/导入数据
 
-```
+```python
 trans = transforms.ToTensor()
 #ToTensor()把IPL图片转化为Tensor
 #并除以255使所有像素均值在0-1之间
@@ -119,7 +117,7 @@ mnist_train[0][0].shape
 
 - 两个可视化数据集的函数
 
-```
+```python
 def get_fashion_mnist_labels(labels):
 ## 返回FashionMNIST的文本标签。
     text_labels = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat',
@@ -154,14 +152,14 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):  #titles=None
 
 - 几个样本的图像和标签
 
-```
+```python
 X, y = next(iter(data.DataLoader(mnist_train, batch_size=18)))
 show_images(X.reshape(18, 28, 28), 2, 9, titles=get_fashion_mnist_labels(y));
 ```
 
 - 读取一小批量图片
 
-```
+```python
 batch_size = 256 #传入批量大小为256
 
 def get_dataloader_workers():
@@ -181,7 +179,7 @@ f'{timer.stop():.2f} sec'
 
 - 定义数据读取的函数
 
-```
+```python
 def load_data_fashion_mnist(batch_size, resize=None):  #@save
     """下载Fashion-MNIST数据集，然后将其加载到内存中"""
     trans = [transforms.ToTensor()]
@@ -206,7 +204,7 @@ def load_data_fashion_mnist(batch_size, resize=None):  #@save
 
 - 引入包
 
-```
+```python
 import torch
 from IPython import display
 from d2l import torch as d2l
@@ -217,7 +215,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 
 - 定义权重
 
-```
+```python
 num_inputs = 784
 #将图片矩阵铺平，变成一个向量，但会损失空间信息 28*28
 num_outputs = 10
@@ -237,7 +235,7 @@ $softmax({\bf{X}})_{ij}={\exp(X_{ij})\over\sum_k\exp(X_{ik})}$
 
 > 这里$X$代表一个batch的图片分类结果矩阵，每一行10个元素代表一张图片的分类标号，${\bf{X}}\in(batchsize\times10)$，所以要对行内求和
 
-```
+```python
 def softmax(X):
     #对矩阵的每一行做softmax
     X_exp = torch.exp(X)
@@ -249,7 +247,7 @@ def softmax(X):
 
 - 定义模型
 
-```
+```python
 def net(X):
     return softmax(torch.matmul(X.reshape(-1, W.shape[0]), W) + b)
     # matmul()是矩阵乘法
@@ -272,7 +270,7 @@ $output(\hat y) = softmax({\bf{O}})$
 
 - 代码技巧，根据标号索引
 
-```
+```python
 y = torch.tensor([0, 2])
 y_hat = torch.tensor([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
 y_hat[[0, 1], y]
@@ -296,7 +294,7 @@ cross_entropy(y_hat, y)
 
 - 统计分类正确的样本数量
 
-```
+```python
 def accuracy(y_hat, y):
     if len(y_hat.shape) > 1 and y_hat.shape[1] > 1:
         y_hat = y_hat.argmax(axis=1)
@@ -316,7 +314,7 @@ accuracy(y_hat, y) / len(y)
 
 - 计算模型在指定数据集上的精度
 
-```
+```python
 def evaluate_accuracy(net, data_iter):
     if isinstance(net, torch.nn.Module):
         #isinstance(obj,type) 函数来判断一个对象是否是一个已知的类型
@@ -332,7 +330,7 @@ def evaluate_accuracy(net, data_iter):
     return metric[0] / metric[1]
 ```
 
-```
+```python
 class Accumulator:
     def __init__(self, n):
         self.data = [0.0] * n
@@ -368,7 +366,7 @@ evaluate_accuracy(net, test_iter)
 
 - Softmax 训练函数
 
-```
+```python
 def train_epoch_ch3(net, train_iter, loss, updater):
     #判断函数是手动还是模块调用，提高函数适用性。
     if isinstance(net, torch.nn.Module):
@@ -402,7 +400,7 @@ def train_epoch_ch3(net, train_iter, loss, updater):
 
 - 动画显示
 
-```
+```python
 class Animator:
     def __init__(self, xlabel=None, ylabel=None, legend=None,
                 xlim=None, ylim=None, xscale= 'linear', yscale='linear',
@@ -460,7 +458,7 @@ class Animator:
 
 10. 定义训练函数
 
-```
+```python
    def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):
     animator = Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0.3, 0.9],
                        legend=['train loss', 'train acc', 'test acc'])
@@ -479,7 +477,7 @@ class Animator:
 
 11. 调用 sgd 优化方法
 
-```
+```python
 lr = 0.1
 #设置学习率。
 def updater(batch_size):
@@ -489,7 +487,7 @@ def updater(batch_size):
 
 12. 开始训练
 
-```
+```python
 num_epochs = 10
 train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 ```
@@ -498,7 +496,7 @@ train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 
 13. 用测试集预测
 
-```
+```python
 def predict_ch3(net, test_iter, n=10):  #@save
     """预测标签（定义见第3章）"""
     for X, y in test_iter:
@@ -520,7 +518,7 @@ predict_ch3(net, test_iter)
 
 1. 引入包
 
-```
+```python
 import torch
 from torch import nn
 from d2l import torch as d2l
@@ -531,7 +529,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 
 2. 定义学习网络
 
-```
+```python
 net = nn.Sequential(nn.Flatten(), nn.Linear(784, 10))
 ## Sequential()函数打包模块序列，使运算按顺序进行，即Flatten的output是Linear的input。
 ## Flatten()函数把任意维度tensor第0维保留，后续维“拉平”展开为第1维
@@ -553,7 +551,7 @@ net.apply(init_weights)
 
 3. 交叉熵损失以及 softmax
 
-```
+```python
 loss = nn.CrossEntropyLoss()
 # l = loss(y_hat, y)
 # CrossEntropyLoss()函数计算input(y_hat)与target(y)的交叉熵损失。
@@ -563,7 +561,7 @@ loss = nn.CrossEntropyLoss()
 
 4. 训练
 
-```
+```python
 trainer = torch.optim.SGD(net.parameters(), lr=0.1)
 
 ## net.parameters()方法返回模块参数的迭代器。
