@@ -27,19 +27,19 @@
 
 | 元素                        | Markdown 语法                                                                       |
 | --------------------------- | ----------------------------------------------------------------------------------- |
-| 标题（Heading）             | `# H1`<br>`## H2`<br>`### H3`<br>……                                                 |
-| 粗体（Blod）                | `**blod text**`                                                                     |
-| 斜体（Italic）              | `*italicized text*`                                                                 |
-| 删除线（Strikethrough）     | `~~The world is flat.~~`                                                            |
-| 引用块（Blockquote）        | `> blockquote`                                                                      |
-| 有序列表（Ordered List）    | `1. First item`<br>`2. Second item`<br>`3. Third item`                              |
-| 无序列表（Unordered List）  | `\backtick item`<br>`- item`                                                        |
-| 代码（Code）                | &#96;`code`&#96;                                                                    |
-| 分隔线（Horizontal Rule）   | `---`                                                                               |
-| 超链接（Link）              | `[链接文字](https://gitee.com/greener/d2l-note)`                                    |
-| 图片（Images）              | `![占位文字](../floder/image.jpg)`                                                  |
-| 代码块（Fenced Code Block） | ` ``` `<br>`import tensorflow as torch`<br>`torch.__version__`<br>` ``` `           |
-| 表格（Table）               | `\| Name \| Age \|`<br>`\|------\|------\|`<br>`\|Tom \|12 \|`<br>`\|Jerry \|10 \|` |
+| **标题**（Heading）             | `# H1`<br>`## H2`<br>`### H3`<br>……                                                 |
+| **粗体**（Blod）                | `**blod text**`                                                                     |
+| **斜体**（Italic）              | `*italicized text*`                                                                 |
+| **删除线**（Strikethrough）     | `~~The world is flat.~~`                                                            |
+| **引用块**（Blockquote）        | `> blockquote`                                                                      |
+| **有序列表**（Ordered List）    | `1. First item`<br>`2. Second item`<br>`3. Third item`                              |
+| **无序列表**（Unordered List）  | `\backtick item`<br>`- item`                                                        |
+| **代码**（Code）                | &#96;`code`&#96;                                                                    |
+| **分隔线**（Horizontal Rule）   | `---`                                                                               |
+| **超链接**（Link）              | `[链接文字](https://gitee.com/greener/d2l-note)`                                    |
+| **图片**（Images）              | `![占位文字](../floder/image.jpg)`                                                  |
+| **代码块**（Fenced Code Block）<br>需在第一个三撇号后指定编程语言 | ` ```python `<br>`import tensorflow as torch`<br>`torch.__version__`<br>` ``` `           |
+| **表格**（Table）               | `\| Name \| Age \|`<br>`\|------\|------\|`<br>`\|Tom \|12 \|`<br>`\|Jerry \|10 \|` |
 
 > 在 VSCode 中，可以在编写中使用快捷键，比如加粗文字按`Ctrl+B`等等
 
