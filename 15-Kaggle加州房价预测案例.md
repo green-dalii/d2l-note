@@ -200,7 +200,7 @@ def train(net, train_features, train_labels, test_features, test_labels,
 - 定义K-折交叉验证步骤
 
 ```python
-# 对数据进行k-折交叉验证的划分
+# 对数据进行k-折交叉验证的划分，并返回第i折的训练数据数据和验证数据
 def get_k_fold_data(k, i, X, y):
     assert k > 1
     fold_size = X.shape[0] // k     # “//”代表z整除，得到每折应有的样本数
@@ -269,9 +269,11 @@ print(f'{k}-折验证：平均训练log rmse:{float(train_l):f},'
 #f'{}'是{}.format()的简易写法
 ```
 
-![result](Images/微信截图_20211221142847.png)
+![result](https://zh.d2l.ai/_images/output_kaggle-house-price_1852a7_137_1.svg)
 
-以上训练均是在训练数据集上进行的，接下来使用测试数据集进行泛化能力测试
+接下来就需要**不断调整训练的超参数并重复上述k-折交叉验证**，如epoch、lr、wd、net类型、参数初始化等等，通过比较不同超参数在k-折交叉验证的验证损失大小，来确定一个最好的超参数选择。
+
+确定好超参数后，在训练数据集上再训练一次，并在测试数据集上进行预测，将结果保存至CSV文件并提交。
 
 - 预测测试集并保存输出
 
@@ -284,27 +286,29 @@ def train_and_pred(train_features, test_feature, train_labels, test_data,
     #传出的是每个epoch的loss，而test_ls=None
     d2l.plot(np.arange(1, num_epochs + 1), [train_ls], xlabel = 'epoch',
             ylabel='log rmse', xlim=[1, num_epochs], yscale='log')
-    print(f'train log rmse {float(train_ls[-1]):f}')
-    #输出最后一个epoch的值。
-    preds = net(test_features).detach().numpy()
-    #net返回预测的test_labels
-    #detach()使梯度计算就此打住
-    #numpy()返回数组
+    print(f'train log rmse {float(train_ls[-1]):f}')    #输出最后一个epoch的loss。
+    
+    preds = net(test_features).detach().numpy() #detach()将变量从计算图中分离并清除梯度
     test_data['SalePrice'] = pd.Series(preds.reshape(1, -1)[0])
-    #(1, -1)排列为一行，但是规定是二维张量，尽管行为1.
-    #[0]取第一行，一个一维行向量
-    #pd.Series()转化为一个dataframe
+    #(1, -1)排列为一行，并取出第0维作为test_data Dataframe对象的'SalePrice'列
+    #pd.Series()转化为一个pandas Series对象
     submission = pd.concat([test_data['Id'], test_data['SalePrice']], axis=1)
-    #把['Id']列和['labels']以行相连。
+    #把['Id']列和['labels']以列(axis=1)横向相连。
     submission.to_csv('submission.csv', index=False)
     #保存路径为./submission.csv
-    #index=False，就不保存索引列
+    #index=False，不保存索引列
 
 train_and_pred(train_features, test_features, train_labels, test_data,
               num_epochs, lr, weight_decay, batch_size)
 ```
 
-![result](/Images/微信截图_20211221174519.png)
+![result](https://zh.d2l.ai/_images/output_kaggle-house-price_1852a7_161_1.svg)
+
+## 课后作业
+
+本节课最后，李沐老师动员大家去Kaggle上做他为课程专门开设的一个小竞赛**California House Prices**，作为前期学习效果的实践巩固和检验。大家可以点击下图访问查看👇。目前仍然可以提交成绩，整个数据集大小在80Mb左右，涉及40个特征，训练数据共47439条，测试数据共31626条。
+
+[![overview](Images/kaggle_California.png)](https://www.kaggle.com/c/california-house-prices/overview)
 
 ## Python 模块参考文档
 
@@ -321,3 +325,4 @@ train_and_pred(train_features, test_features, train_labels, test_data,
 - `torch.cat(inputs, dimension=0)`PyTorch对输入张量序列进行连接操作🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch/#indexing-slicing-joining-mutating-ops) | [官方英文](https://pytorch.org/docs/stable/generated/torch.cat.html?highlight=cat#torch.cat)
 
 ---
+
