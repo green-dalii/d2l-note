@@ -225,3 +225,4 @@ pie
 - [Markdown 官方教程](https://markdown.com.cn/)
 - [LaTex 数学公式语法手册](https://uinika.gitee.io/Zen/LaTex/)
 - WikiBooks《LaTeX/Mathematics》👉[网页版](https://en.m.wikibooks.org/wiki/LaTeX/Mathematics#) 👉[PDF 版](https://www.aliyundrive.com/s/rNEwzrMEn2P)
+- [Mermaid 官方文档](https://mermaid-js.github.io/mermaid/#/)
