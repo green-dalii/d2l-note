@@ -5,14 +5,19 @@
 ### 🎦 本节课程视频地址 👉
 [![Bilibil](https://i0.hdslb.com/bfs/archive/9a09827a8220e688f6866c928f58f5a256788aab.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1AK4y1P7vs)
 
-### 层和块
+## 层和块
 
-**块**（block）可以描述单个层、由多个层组成的组件或整个模型本身。使用块进行抽象的一个好处是可以将一些块组合成更大的组件， 这一过程通常是递归的。 通过定义代码来按需生成任意复杂度的块， 我们可以**通过简洁的代码实现复杂的神经网络**。
+**块**（block）可以描述单个层、由多个层组成的组件或整个模型本身。使用块进行抽象的一个好处是可以将一些块组合成更大的组件， 这一过程通常是递归的，如下图所示。 通过定义代码来按需生成任意复杂度的块， 我们可以**通过简洁的代码实现复杂的神经网络**。
+
+![block](https://zh.d2l.ai/_images/blocks.svg)
 
 从编程的角度来看，块由**类**（class）表示。 它的任何子类都必须定义一个将其输入转换为输出的前向传播函数， 并且必须存储任何必需的参数。 
 
-从多层感知机入手：
-```
+### 使用Sequential实现层
+
+`nn.Sequential`定义了一种特殊的Module，通过实例化nn.Sequential来构建我们的模型， 层的执行顺序是作为参数传递的。
+
+```python
 import torch
 from torch import nn
 from torch.nn import functional as F
@@ -21,67 +26,87 @@ net = nn.Sequential(nn.Linear(20, 256), nn.ReLU(), nn.Linear(256,10))
 
 X = torch.rand(2, 20)
 net(X)
-
-## 利用Sequential定义了一个特殊的Module
 ```
+
+### 使用Block实现块
+
 任何一个层、神经网络都可以看作Module的一个子类。
 
-我们通过实例化nn.Sequential来构建我们的模型， 层的执行顺序是作为参数传递的。
-
-也可以自定义块：
-```
+```python
 class MLP(nn.Module):
+    # 必须先使用父类的init初始化，接下来可以定义各层
     def __init__(self):
         super().__init__()
         self.hidden = nn.Linear(20, 256)
         self.out = nn.Linear(256, 10)
-        
+    # 必须重新定义前馈过程   
     def forward(self, X):
         return self.out(F.relu(self.hidden(X)))
-    #此处必须是forward,相当于对nn.Module里的__call__()下的forward重定义；
+    
+net = MLP()
+net(X)
 ```
-还可以自己实现Sequential:
-```
+
+### 自定义Sequential实现
+
+```python
 class MySequential(nn.Module):
     def __init__(self, *args):
         super().__init__()
-        for block in args:
-            #把args的参数传入作为self.modules这个有序字典的键-值对
-            self._modules[block] = block
-    
+        for idx, module in enumerate(args):
+            # 这里，`module`是`Module`子类的一个实例。我们把它保存在'Module'类的成员
+            # 变量`_modules` 中。`module`的类型是OrderedDict
+            self._modules[str(idx)] = module
+
     def forward(self, X):
+        # OrderedDict保证了按照成员添加的顺序遍历它们
         for block in self._modules.values():
-            #依次调用有序字典里的模块
             X = block(X)
         return X
     
 net = MySequential(nn.Linear(20, 256), nn.ReLU(), nn.Linear(256, 10))
 net(X)
 ```
-可以自定义块来使算法更灵活：
-```
+
+### 自定义Block实现
+
+```python
 class FixedHiddenMLP(nn.Module):
     def __init__(self):
         super().__init__()
-        self.rand_weight = torch.rand((20, 20), requires_grad=False)
         #随机生成20*20不参与训练的权重
+        self.rand_weight = torch.rand((20, 20), requires_grad=False)
         self.linear = nn.Linear(20, 20)
         
     def forward(self, X):
         X = self.linear(X)
-        X = F.relu(torch.mm(X, self.rand_weight) + 1)
-        ##torch.mm()是矩阵乘法，假设有一个偏移
+        X = F.relu(torch.mm(X, self.rand_weight) + 1)   ##torch.mm()矩阵乘法，假设有一个偏移1
         X = self.linear(X)
+        # 可以在前向计算中使用Python控制流来实现更复杂的过程
         while X.abs().sum() > 1:
             X /= 2
-            return X.sum()
+        return X.sum()
     
 net = FixedHiddenMLP()
 net(X)
-## 通过继承nn.Module可以更灵活地定义模型
 ```
-块之间可以嵌套：
-```
+
+> 在这个`FixedHiddenMLP`模型中，我们实现了一个隐藏层，
+其权重（`self.rand_weight`）在实例化时被随机初始化，之后为常量。
+这个权重不是一个模型参数，因此它永远不会被反向传播更新。
+然后，神经网络将这个固定层的输出通过一个全连接层。
+>
+> 注意，在返回输出之前，模型做了一些不寻常的事情：
+它运行了一个while循环，在$L_1$范数大于$1$的条件下，
+将输出向量除以$2$，直到它满足条件为止。
+最后，模型返回了`X`中所有项的和。
+注意，此操作可能不会常用于在任何实际任务中，
+我们只是向你展示如何将任意代码集成到神经网络计算的流程中。
+
+
+### 混合Sequential和Block使用
+
+```python
 class NestMLP(nn.Module):
     def __init__(self):
         super().__init__()
@@ -98,10 +123,13 @@ chimera(X)
 
 综上，块可以理解为能够实现一个或多个层的类，通过定义类的实例化来完成神经网络的运算。
 
+## 参数管理
+
 ### 初始化参数
+
 > state_dict() #查看字典形式的数值
 
-```
+```python
 print(net[2].state_dict())
 #可以把Sequential看作一个list，可以切片拿出每一层的参数。
 #是一个字典。
@@ -109,7 +137,8 @@ print(net[2].state_dict())
 ```
 
 >nn.bias/.weight(.data/.grad)#直接查看参数
-```
+
+```python
 print(type(net[2].bias))
 print(net[2].bias)
 print(net[2].bias.data)
@@ -117,13 +146,16 @@ print(net[2].bias.data)
 ```
 
 > .named_parameters()#返回iterator，用于循环，返回(参数名, 参数数值)。
-```
+
+```python
 print(*[(name, param.shape) for name, param in net[0].named_parameters()])
 print(*[(name, param.shape) for name, param in net.named_parameters()])
 # *代表把list/tuple里的元素分开，而非整个输出
 ```
+
 >add_module(name, module)#在当前模块添加子模块，以（命名，模块）的方式
-```
+
+```python
 def block1():
     return nn.Sequential(nn.Linear(4, 8), nn.ReLU(), nn.Linear(8, 4), nn.ReLU())
 
@@ -139,10 +171,11 @@ def block2():
 rgnet = nn.Sequential(block2(), nn.Linear(4, 1))
 rgnet(X)
 ```
+
 > nn.init.normal_/zeros_/constant_/uniform_ #初始化参数
 > nn.apply() #对模块应用方法
 
-```
+```python
 def init_normal(m):
     if type(m) == nn.Linear:
         nn.init.normal_(m.weight, mean=0, std=0.01)
@@ -176,14 +209,18 @@ net[2].apply(init_42)
 print(net[0].weight.data[0])
 print(net[2].weight.data)
 ```
+
 >简单粗暴的直接赋值方式
-```
+
+```python
 net[0].weight.data[:] += 1
 net[0].weight.data[0, 0] = 42
 net[0].weight.data[0] #默认取行
 ```
+
 >参数联动
-```
+
+```python
 shared = nn.Linear(8, 8)
 net = nn.Sequential(nn.Linear(4, 8), nn.ReLU(), shared, nn.ReLU(), shared,
                    nn.ReLU(), nn.Linear(8, 1))
@@ -195,7 +232,8 @@ print(net[2].weight.data[0] == net[4].weight.data[0])
 ```
 
 ### 自定义层
-```
+
+```python
 class CenteredLayer(nn.Module):
     def __init__(self):
         super().__init__()
@@ -211,8 +249,10 @@ net = nn.Sequential(nn.Linear(8, 128), CenteredLayer())
 Y = net(torch.rand(4, 8))
 Y.mean()
 ```
+
 > nn.Parameter(tensor, required_grad=True) #把传入张量当作模块参数，可以对其求导的
-```
+
+```python
 #自定义带参数的层
 class MyLinear(nn.Module):
     def __init__(self, in_units, units):
@@ -235,7 +275,7 @@ dense.weight
 >torch.save(parameter, 'filename')
 >torch.load('filename')
 
-```
+```python
 #存储一个tensor
 X = torch.arange(4)
 torch.save(X, 'x-file')
@@ -243,21 +283,24 @@ torch.save(X, 'x-file')
 X2 = torch.load('x-file')
 X2
 ```
-```
+
+```python
 #存储高维度
 y = torch.zeros(4)
 torch.save([X, y], 'x-files')
 x2, y2 = torch.load('x-files')
 (x2, y2)
 ```
-```
+
+```python
 #存储字典
 mydict = {'x': X, 'y': y}
 torch.save(mydict, 'mydict')
 mydict2 = torch.load('mydict')
 mydict2
 ```
-```
+
+```python
 #存储模型参数
 class MLP(nn.Module):
     def __init__(self):
