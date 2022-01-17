@@ -16,8 +16,8 @@
 
   - 输出通常为多个离散值
   - 输出的第$i$个元素表示预测为第$i$类的置信度
-  
-**Softmax 回归是以回归之名的分类算法**，Softmax回归也可以看作是拥有多个输出的单层神经网络：
+
+**Softmax 回归是以回归之名的分类算法**，Softmax 回归也可以看作是拥有多个输出的单层神经网络：
 
 ![softmax](https://zh.d2l.ai/_images/softmaxreg.svg)
 
@@ -71,7 +71,7 @@ $$\partial_{o_i}l(\bf{y},\hat{\bf{y}})=softmax({\bf o})_i-y_i$$
 
 ## 损失函数
 
-为了互补L1损失原点不可导与L2损失原点外梯度过大的劣势，提出**Huber's Robust Loss**：
+为了互补 L1 损失原点不可导与 L2 损失原点外梯度过大的劣势，提出**Huber's Robust Loss**：
 
 $$
 l(y,y\prime)=
@@ -233,7 +233,7 @@ b = torch.zeros(num_outputs, requires_grad=True)
 
 $softmax({\bf{X}})_{ij}={\exp(X_{ij})\over\sum_k\exp(X_{ik})}$
 
-> 这里$X$代表一个batch的图片分类结果矩阵，每一行10个元素代表一张图片的分类标号，${\bf{X}}\in(batchsize\times10)$，所以要对行内求和
+> 这里$X$代表一个 batch 的图片分类结果矩阵，每一行 10 个元素代表一张图片的分类标号，${\bf{X}}\in(batchsize\times10)$，所以要对行内求和
 
 ```python
 def softmax(X):
@@ -345,7 +345,7 @@ class Accumulator:
     def reset(self):
         #累加器归零
         self.data = [0.0] * len(self.data)
-        
+
 
     def __getitem__(self, idx):
         #self索引
@@ -362,7 +362,7 @@ class Accumulator:
 evaluate_accuracy(net, test_iter)
 ```
 
-以上完成了测试数据集迭代一个batch的初始精确度，因为总共是10类，网络参数是随机化，所以精度是10%左右。
+以上完成了测试数据集迭代一个 batch 的初始精确度，因为总共是 10 类，网络参数是随机化，所以精度是 10%左右。
 
 - Softmax 训练函数
 
@@ -580,15 +580,15 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 
 ## Pytorch 模块参考文档
 
-- `torchvision.transfrom`Pytorch视觉处理模块中的图像变换和增广 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/torchvision/torchvision-transform/) | [官方英文](https://pytorch.org/vision/main/transforms.html)
-- `torch.nn.Sequential()`Pytorch顺序神经网络容器 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html#torch.nn.Sequential)
-- `torch.nn.Flatten()`Pytorch展平层 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html#torch.nn.Flatten)
-- `torch.nn.CrossEntropyLoss(weight=None, size_average=None, ignore_index=- 100, reduce=None, reduction='mean', label_smoothing=0.0)`Pytorch交叉熵损失函数，默认输出为损失的平均 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions) | [官方英文](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss)
+- `torchvision.transfrom`Pytorch 视觉处理模块中的图像变换和增广 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/torchvision/torchvision-transform/) | [官方英文](https://pytorch.org/vision/main/transforms.html)
+- `torch.nn.Sequential()`Pytorch 顺序神经网络容器 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html#torch.nn.Sequential)
+- `torch.nn.Flatten()`Pytorch 展平层 🧐[官方英文](https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html#torch.nn.Flatten)
+- `torch.nn.CrossEntropyLoss(weight=None, size_average=None, ignore_index=- 100, reduce=None, reduction='mean', label_smoothing=0.0)`Pytorch 交叉熵损失函数，默认输出为损失的平均 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions) | [官方英文](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss)
 
 ---
 
 ## Q&A🤓
 
-**Q：softmax解决的多分类问题，会不会出现类别不平衡？**
+**Q：softmax 解决的多分类问题，会不会出现类别不平衡？**
 
 **🙋‍♂️**：如果要用机器学习解决多分类问题，那么训练数据就要尽量保证各类都有充足的样本，且数量最好能接近均衡，这样学习算法才能更全面的提取各类的特征，如果某类训练数据过少，则模型对该类的预测也会不可靠。

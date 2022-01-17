@@ -62,7 +62,7 @@ Markdown 支持插入 Latex 公式语法，分为两种写法：
 
 ![latex_3](Images/latex_3.webp)
 
-## Mermaid作图语法
+## Mermaid 作图语法
 
 Mermaid 是一个基于 Javascript 的图表绘制工具，通过解析类 Markdown 的文本语法来实现图表的创建和动态修改。Mermaid 通过减少创建可修改的图表所需要的时间、精力和工具来解决这一难题，从而提高了内容的智能化和可重用性。
 
