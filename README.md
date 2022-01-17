@@ -28,7 +28,7 @@
 
 ## 多人在线协同
 
-通过 Git 版本控制系统与 Gitee 平台，可以实现笔记的多人在线协作 🤹‍♀️ 共同写作。可以在Gitee平台上首先🧬`Fork`本项目，再通过下⤴`Pull Requests`向本项目提交修改。具体方法参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
+通过 Git 版本控制系统与 Gitee 平台，可以实现笔记的多人在线协作 🤹‍♀️ 共同写作。可以在 Gitee 平台上首先 🧬`Fork`本项目，再通过下 ⤴`Pull Requests`向本项目提交修改。具体方法参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
 
 ## 其他参考学习资源
 
@@ -81,6 +81,12 @@
 - [跟李沐学 AI《深度学习论文精读》系列视频 🙌🙌🙌](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=32744)，👉[Github](https://github.com/mli/paper-reading)
 - [沈向洋带你读论文系列视频 🙌🙌](https://space.bilibili.com/1706874133/video)，👉[ReadPaper 学术讨论社区](https://readpaper.com/)
 - [B 站 UP 主：《喝 CV 的咖啡》整理的各算法讲解视频](https://space.bilibili.com/430141951/video)
+
+### 论文及电子书下载
+
+- [arXiv](https://arxiv.org/)：arXiv是康奈尔大学开放的一个免费的学术分发服务和开放获取档案，是世界上最大的预印本网站，30年来造福了无数科研工作者，收录了物理学、数学、计算机科学、定量生物学、定量金融学、统计学、电气工程和系统科学以及经济学等领域的200万+篇学术文章。
+- [Sci-hub](https://sci-hub.ru/)：一个俄罗斯人开发的学术检索平台，通过输入文献的链接或者DOI或者PubMed号可以下载几乎所有SCI论文（只要不用万恶的知网👿我们就是好朋友👋）。由于触动各大出版商利益，经常被封域名，可以在这里查询镜像👉[查询](https://ifish.fun/paper/scihub)，[🌏镜像1](https://sci-hub.st/)、[🌏镜像2](https://sci-hub.ru/)、[🌏镜像3](https://sci-hub.et-fine.com/)
+- [Z-librery](https://zh.bg1lib.org/)：全球最大的数字图书馆项目，可以下载到**几乎任何**的电子书、教材等等。
 
 ### AI 领域高质量博客/网站
 
