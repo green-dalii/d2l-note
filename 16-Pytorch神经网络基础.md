@@ -2,7 +2,7 @@
 
 ---
 
-### 🎦 本节课程视频地址 👉
+### 🎦 本节课程视频地址 👇
 
 [![Bilibil](https://i0.hdslb.com/bfs/archive/9a09827a8220e688f6866c928f58f5a256788aab.jpg@640w_400h_100Q_1c.webp)](https://www.bilibili.com/video/BV1AK4y1P7vs)
 
