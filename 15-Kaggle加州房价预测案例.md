@@ -325,3 +325,32 @@ train_and_pred(train_features, test_features, train_labels, test_data,
 - `torch.cat(inputs, dimension=0)`PyTorch 对输入张量序列进行连接操作 🧐[中文](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch/#indexing-slicing-joining-mutating-ops) | [官方英文](https://pytorch.org/docs/stable/generated/torch.cat.html?highlight=cat#torch.cat)
 
 ---
+
+## Q&A🤓
+
+**Q：训练时在做数据特征化时，内存炸掉怎么办？**
+
+**🙋‍♂️**：数据的特征化处理一直也是深度学习乃至机器学习很重要的一步，而一般对于 NLP 领域、CV 领域来说，数据量都很大，常常会遇到还没开始训练，仅特征化数据就炸内存/显存的问题。一般碰到硬件瓶颈时无非就两种途径：
+
+1. 有钱任性上更好、更贵的硬件
+2. 改进算法，使计算复杂度、空间复杂度降低
+
+有时候，方法 1 我们心有余而力不足（🚫💰 没钱 or 已经达到当下硬件极限），大多都是通过方法 2 在现有硬件条件下，通过开动脑筋 🙇‍♂️，来达到我们的目的（纵观机器学习的发展史，各种著名的模型算法，如 word bag、word2vec、CNN、LSTM、Transformer 等，都是在现有硬件极限下，通过巧妙地设计，成功处理更大更复杂数据的范例）。
+
+在传统机器学习中，**特征工程**是决定一项任务成败的关键一环，美国计算机科学家 Peter Norvig 的 2 句经典名言：
+
+> 基于大量数据的简单模型优于基于少量数据的复杂模型。
+
+这句说明了数据量的重要性。
+
+> 更多的数据优于聪明的算法，而好的数据优于多的数据。
+
+这句则是说的特征工程的重要性。
+
+所以，如何基于给定数据来发挥更大的数据价值就是特征工程要做的事情。
+
+在 16 年的一项调查中发现，数据科学家的工作中，有 80%的时间都在获取、清洗和组织数据。构造机器学习流水线的时间不到 20%。详情如下：
+
+![80percent](http://easy-ai.oss-accelerate.aliyuncs.com/2021-03-02-Data%20Scientists%20Spend%20Most%20of%20Their%20Time%20Cleaning%20Data.png)
+
+更多内容可参考 👉[这里](https://easyai.tech/ai-definition/feature-engineering/)
