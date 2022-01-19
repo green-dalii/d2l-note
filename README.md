@@ -109,7 +109,7 @@
 
 ## 深度学习计算平台
 
-- [Amazon Sagemaker Studio Lab（🙌Free GPU!）](https://studiolab.sagemaker.aws/)
+- [Amazon Sagemaker Studio Lab（🙌Free GPU!）](https://studiolab.sagemaker.aws/)👉[使用说明](https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/sagemaker.html)
 - [Google Colab（需梯子,Free GPU）](https://colab.research.google.com/)
 - [AutoDL（国内平台，按需租用，价格较低）](https://www.autodl.com/)
 - [AWS（老牌云平台，国内无障碍访问，价格尚可）](https://aws.amazon.com/cn/)

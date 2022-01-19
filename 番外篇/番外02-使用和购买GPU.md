@@ -183,3 +183,26 @@ net[0].weight.data.device
 - 目前来说购买 **绿厂（Nvidia）** 的 GPU 要比红厂（AMD）、蓝厂（Intel）的要好，能获得最多的生态支持、性能表现、参考资料。
 - **买新不买旧**，越新一代的 GPU 在同等价格上能提供更高的 GFlops
 - **量力而行**，因挖矿不好买就使用云计算按需使用付费，常用云服务商汇总可参考 👉[这里](../README.md)
+
+## 使用具有GPU实例的云计算
+
+### Amazon SageMaker（免费GPU实例，适合学习）
+
+- [项目主页](https://studiolab.sagemaker.aws/)
+- [使用说明](https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/sagemaker.html)
+
+### 使用Amazon EC2实例（按需付费）
+
+- [项目主页](https://aws.amazon.com/cn/)
+- [使用说明](https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/aws.html)
+
+### 使用华为云（按需付费）
+
+- [项目主页](https://www.huaweicloud.com/)
+- [使用说明 - 由该笔记作者之一整理](https://mp.weixin.qq.com/s/J7flZrkrKEjWNqwzHmm4Zw)
+
+### 云计算使用时需要注意的额外问题
+
+#### 开启云主机的交换文件（虚拟内存）功能，降低内存溢出的概率
+
+大多数公司的Linux云主机为保证性能，默认禁用了**Swap（交换文件）**，不过在实际使用过程中，遇到数据量较大的操作时，经常会占满内存导致机器假死或崩溃，所以需要手动开启Swap，步骤参考👉[这里](番外03-Linux常用命令.md#开启/禁用Swap交换文件)。
