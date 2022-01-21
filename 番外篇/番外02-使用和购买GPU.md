@@ -22,7 +22,7 @@ GPU 在深度学习领域扮演着极为重要的角色，随着硬件发展及�
 
 ### 硬件及驱动准备
 
-首先你要有一块绿厂 GPU（GTX9XX、GTX10X0、RTX20X0、RTX30X0），然后安装最新的驱动程序，再在 👉[此处](https://developer.nvidia.com/cuda-downloads)下载 CUDA Toolkot。
+首先你要有一块绿厂 GPU（GTX9XX、GTX10X0、RTX20X0、RTX30X0），然后安装最新的驱动程序，再在 👉[此处](https://developer.nvidia.com/cuda-downloads)下载 CUDA Toolkot（适合Windows）。或点此👉[此处](https://www.autodl.com/docs/cuda/)以命令行形式下载（适合云主机等无GUI界面Linux）
 
 安装完毕后，在命令行输入命令`nvidia-smi`，若出现类似信息（型号等参数不同硬件会有不同），则表明安装成功：
 
@@ -183,6 +183,8 @@ net[0].weight.data.device
 - 目前来说购买 **绿厂（Nvidia）** 的 GPU 要比红厂（AMD）、蓝厂（Intel）的要好，能获得最多的生态支持、性能表现、参考资料。
 - **买新不买旧**，越新一代的 GPU 在同等价格上能提供更高的 GFlops
 - **量力而行**，因挖矿不好买就使用云计算按需使用付费，常用云服务商汇总可参考 👉[这里](../README.md)
+- 点击👉[这里](https://www.autodl.com/docs/gpu/)，查看GPU选型参考
+- 点击👉[这里](https://www.autodl.com/docs/gpu_perf/)，查看主流Nvidia GPU性能Benchmark参考
 
 ## 使用具有GPU实例的云计算
 
@@ -199,7 +201,7 @@ net[0].weight.data.device
 ### 使用华为云（按需付费）
 
 - [项目主页](https://www.huaweicloud.com/)
-- [使用说明 - 由该笔记作者之一整理](https://mp.weixin.qq.com/s/J7flZrkrKEjWNqwzHmm4Zw)
+- [使用说明 - 由该笔记作者之一Greener-Dalii整理](https://mp.weixin.qq.com/s/J7flZrkrKEjWNqwzHmm4Zw)
 
 ### 云计算使用时需要注意的额外问题
 

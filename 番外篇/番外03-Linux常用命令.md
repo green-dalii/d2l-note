@@ -50,3 +50,7 @@ swapoff -v /swapfile
 # 删除swapfile文件
 rm /swapfile
 ```
+
+## 参考链接
+
+- [常用Linux命令](https://www.autodl.com/docs/linux/)
