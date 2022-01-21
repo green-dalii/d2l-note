@@ -9,6 +9,7 @@
 - **Markdown All In One**：Markdown 增强包
 - **Markdown Emoji**：支持插入 Emoji 表情
 - **Markdown Preview Mermaid Support**：为 Markdown 增加作图支持（架构图、思维导图等）
+- **Markdown PDF**：如果有导出为 PDF 文件需求，安装这个插件（安装过程中会在后台下载 Chromium Engine 作为渲染引擎，需要等待一段时间）
 
 ### 扩展安装方法
 
@@ -217,8 +218,40 @@ pie
   </td>
 </tr>
 <!-- </Journey> -->
-
 </table>
+
+## 将导出为 PDF
+
+在安装完“**Markdown PDF**”插件后，为了能在导出的 PDF 中正常显示 LaTex 公式，需要进行以下修改，为我们的导出模板增加一个号称数学公式渲染最快的 JS 库——[**KaTex**](https://katex.org/)：
+
+1. 找到当前用户目录下的`.vscode\extensions\yzane.markdown-pdf-1.x.x\template`文件夹（Windows 系统一般在`C:\Users\<你的用户名>`，Linux 一般在根目录下的用户名文件夹）
+2. 编辑`template.html`文件，在`<head>...</head>`标签中增加下述内容：
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+  integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+  integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+```
+
+3. 在需要转换的 VSCode 窗口文件右键，出现以下菜单，选择`Markdown PDF:Export(PDF)`即可在 markdown 文件所在目录找到导出的 PDF 文件。
+
+![markdown2pdf](Images/markdown2pdf.jpg)
 
 ## 参考链接
 
