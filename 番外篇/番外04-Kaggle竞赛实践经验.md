@@ -123,6 +123,8 @@ sns.catplot(y="Type",x="Sold Price",kind="violin",data=type_df,height=5,aspect=3
 
 #### 不能直接将BN层与Dropout层混用
 
-两种正则化不能混用，实际使用中发现会导致精度下降。
+BatchNorm和Dropout两种方法不能混用，实际使用中发现会导致精度下降且训练不稳定的现象。
 
 论文参考👉[Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift](https://arxiv.org/abs/1801.05134)
+
+#### 记得在模型预测时写上`net.eval()`开启评估模式，以免前功尽弃
