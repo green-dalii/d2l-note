@@ -231,7 +231,9 @@ b = torch.zeros(num_outputs, requires_grad=True)
 
 - 定义 Softmax 函数
 
-$softmax({\bf{X}})_{ij}={\exp(X_{ij})\over\sum_k\exp(X_{ik})}$
+$$
+softmax({\bf{X}})_{ij}={\exp(X_{ij})\over\sum_k\exp(X_{ik})}
+$$
 
 > 这里$X$代表一个 batch 的图片分类结果矩阵，每一行 10 个元素代表一张图片的分类标号，${\bf{X}}\in(batchsize\times10)$，所以要对行内求和
 
