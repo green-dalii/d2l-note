@@ -92,6 +92,7 @@
 
 - [Distill👍👍👍](https://distill.pub/)：算法可视化做得非常棒的一个网站，定期发布解读文章，深入浅出！
 - [PaperWithCode👍👍👍](https://paperswithcode.com/)：汇聚了主流论文的代码实现，还有 SOTA Benchmark、常用库、数据集、各框架统计对比等等
+- [TheAISummer👍👍](https://theaisummer.com/)：一个AI相关的博客，有非常多高质量的图文并茂讲解文章，适合入门学习
 - [TensorFlow Playground](http://playground.tensorflow.org/)：多层神经网络可视化，可以实时调整各种参数。不得不说谷歌大法好，项目质量优质、精致
 - [Stanford ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/)：斯坦福一个运行于浏览器的神经网络 Demo
 - [DeepLearning Ai-Note](https://www.deeplearning.ai/ai-notes/)
