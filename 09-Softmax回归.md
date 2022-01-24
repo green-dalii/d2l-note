@@ -320,8 +320,7 @@ accuracy(y_hat, y) / len(y)
 def evaluate_accuracy(net, data_iter):
     if isinstance(net, torch.nn.Module):
         #isinstance(obj,type) 函数来判断一个对象是否是一个已知的类型
-        net.eval()
-        #eval()函数把模块设置为评估模式，只计算前馈，不计算梯度
+        net.eval()      #eval()函数把模块设置为评估模式，只计算前馈，不计算梯度
     metric = Accumulator(2)
     #Accumulator是自定义的一个类，作为叠加器
     for X, y in data_iter:

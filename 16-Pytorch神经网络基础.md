@@ -477,12 +477,10 @@ Y = net(X)
 
 torch.save(net.state_dict(), 'mlp.params') #存储的实际是模型参数而非模型本身
 
-clone = MLP()
-#先克隆原模型本身
+clone = MLP()   #先克隆原模型本身
+#再载入参数
 clone.load_state_dict(torch.load('mlp.params'))
-#再载入并重写克隆的模型
-clone.eval()
-#eval()设置一个模型参数为不可导，用于预测推理
+clone.eval()    #eval()设置模型为评估推理模式，参数为不可导
 Y_clone = clone(X)
 Y_clone == Y   
 # Out: True
