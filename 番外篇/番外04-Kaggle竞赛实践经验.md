@@ -128,3 +128,9 @@ BatchNorm和Dropout两种方法不能混用，实际使用中发现会导致精�
 论文参考👉[Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift](https://arxiv.org/abs/1801.05134)
 
 #### 记得在模型预测时写上`net.eval()`开启评估模式，以免前功尽弃
+
+#### Adam优化器不能与Weight Decey一起使用，可以用AdamW优化器替代
+
+在Adam优化器中，weight decay与L2正则并不等价，除此之外，Adam+L2的方案会导致不理想的优化过程。论文《Decoupled Weight Decay Regularization》指出了这一点
+
+> Just adding the square of the weights to the loss function is *not* the correct way of using L2 regularization/weight decay with Adam, since that will interact with the m and v parameters in strange ways.
