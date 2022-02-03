@@ -4,13 +4,13 @@
 
 ## 使用说明
 
-- 为方便索引使用，每节课的笔记文件名必须规范为 **“序号-本节课程视频名称”** （如：“ _08-线性回归 + 基础优化算法 .md_ ” ）
+- 本项目使用[Docsify](https://docsify.js.org/)技术生成，并托管在[GitHub Pages](https://green-dalii.github.io/d2l-note)和 Gitee Pages[进行中..]
+- 编辑时为方便索引使用，每节课的笔记文件名必须规范为 **“序号-本节课程视频名称”** （如：“ _08-线性回归 + 基础优化算法 .md_ ” ）
 - 所有笔记将采用**Markdown**格式进行编排,推荐使用**VSCode**来编写。
   - [Markdown 快速入门点这里](02-Markdown快速入门.md)，[Markdown 官方教程](https://markdown.com.cn/)
   - Markdown 数学公式语法 👉[链接 1](https://blog.csdn.net/weixin_42782150/article/details/104878759)、[链接 2](https://blog.csdn.net/dss_dssssd/article/details/82692894)
-  - [VSCode 下载点这里](https://code.visualstudio.com/) ||
+  - [VSCode 下载点这里](https://code.visualstudio.com/)
   - [Git 下载地址](https://npm.taobao.org/mirrors/git-for-windows/v2.31.1.windows.1/Git-2.31.1-32-bit.exe)
-- 《动手学深度学习》公开课视频点击 👉[此处](https://space.bilibili.com/1567748478/channel/seriesdetail?sid=358497)，目前课程已完结。课程文档**D2L**链接点击 👉[此处](https://zh-v2.d2l.ai/)
 - 若需在笔记中插入图片，推荐使用可靠的外链，如需插入本地图片，可先修改图片名称并上传至仓库的`Images`文件夹，再在 Markdown 中使用相对 URL 进行引用。
 
 ## 课程资源
@@ -28,7 +28,7 @@
 
 ## 多人在线协同
 
-通过 Git 版本控制系统与 Gitee 平台，可以实现笔记的多人在线协作 🤹‍♀️ 共同写作。可以在 Gitee 平台上首先 🧬`Fork`本项目，再通过下 ⤴`Pull Requests`向本项目提交修改。具体方法参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
+通过 Git 版本控制系统与 Gitee 平台，可以实现笔记的多人在线协作 🤹‍♀️ 共同写作。可以在 Gitee 平台上首先 🧬`Fork`本项目，再通过 ⤴`Pull Requests`向本项目提交修改。具体方法参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
 
 ## 其他参考学习资源
 
@@ -84,15 +84,15 @@
 
 ### 论文及电子书下载
 
-- [arXiv](https://arxiv.org/)：arXiv是康奈尔大学开放的一个免费的学术分发服务和开放获取档案，是世界上最大的预印本网站，30年来造福了无数科研工作者，收录了物理学、数学、计算机科学、定量生物学、定量金融学、统计学、电气工程和系统科学以及经济学等领域的200万+篇学术文章。
-- [Sci-hub](https://sci-hub.ru/)：一个俄罗斯人开发的学术检索平台，通过输入文献的链接或者DOI或者PubMed号可以下载几乎所有SCI论文（只要不用万恶的知网👿我们就是好朋友👋）。由于触动各大出版商利益，经常被封域名，可以在这里查询镜像👉[查询](https://ifish.fun/paper/scihub)，[🌏镜像1](https://sci-hub.st/)、[🌏镜像2](https://sci-hub.ru/)、[🌏镜像3](https://sci-hub.et-fine.com/)
+- [arXiv](https://arxiv.org/)：arXiv 是康奈尔大学开放的一个免费的学术分发服务和开放获取档案，是世界上最大的预印本网站，30 年来造福了无数科研工作者，收录了物理学、数学、计算机科学、定量生物学、定量金融学、统计学、电气工程和系统科学以及经济学等领域的 200 万+篇学术文章。
+- [Sci-hub](https://sci-hub.ru/)：一个俄罗斯人开发的学术检索平台，通过输入文献的链接或者 DOI 或者 PubMed 号可以下载几乎所有 SCI 论文（只要不用万恶的知网 👿 我们就是好朋友 👋）。由于触动各大出版商利益，经常被封域名，可以在这里查询镜像 👉[查询](https://ifish.fun/paper/scihub)，[🌏 镜像 1](https://sci-hub.st/)、[🌏 镜像 2](https://sci-hub.ru/)、[🌏 镜像 3](https://sci-hub.et-fine.com/)
 - [Z-librery](https://zh.bg1lib.org/)：全球最大的数字图书馆项目，可以下载到**几乎任何**的电子书、教材等等。
 
 ### AI 领域高质量博客/网站
 
 - [Distill👍👍👍](https://distill.pub/)：算法可视化做得非常棒的一个网站，定期发布解读文章，深入浅出！
 - [PaperWithCode👍👍👍](https://paperswithcode.com/)：汇聚了主流论文的代码实现，还有 SOTA Benchmark、常用库、数据集、各框架统计对比等等
-- [AISummer👍👍](https://theaisummer.com/)：一个AI相关的博客，有非常多高质量的图文并茂讲解文章，适合入门学习
+- [AISummer👍👍](https://theaisummer.com/)：一个 AI 相关的博客，有非常多高质量的图文并茂讲解文章，适合入门学习
 - [Aminer👍](https://www.aminer.cn/)：科研工作者的科研社交和论文贡献知识图谱化分析平台
 - [TensorFlow Playground](http://playground.tensorflow.org/)：多层神经网络可视化，可以实时调整各种参数。不得不说谷歌大法好，项目质量优质、精致
 - [Stanford ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/)：斯坦福一个运行于浏览器的神经网络 Demo
@@ -120,8 +120,16 @@
 
 ## 建议&问题反馈
 
-同学们在学习的过程中，对笔记上的内容有任何疑问（如🙋‍♀️**提问&回答**、✒**排版**、💬**意见建议** 等）欢迎在本项目的 Gitee 主页疯狂点击 🖱`Issues`按钮，提出**Issues**进行反馈，我们会尽力及时回复~
+同学们在学习的过程中，如果对笔记上的内容有任何想说的（如 🙋‍♀️**提问&回答**、✒**排版**、💬**意见建议** ）可以在对应的每篇笔记页面的 👇 最底部 👇 的**Gitalk 留言板**畅所欲言（需登录 Github 账号），留言内容将作为项目的 Issues 提交至作者，我们会尽快进行回复反馈。
 
-![create_issue](Images/create_issue.png)
+<!-- ![create_issue](Images/create_issue.png) -->
 
-如果觉得笔记内容有写得实在👁不顺眼、❌有错、💢瞎写的地方，欢迎**光速打脸纠错** ✋，提起袖子提交🔗**Pull Requests**进行修改，具体操作步骤可参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
+如果觉得笔记内容有写得实在 👁 不顺眼、❌ 有错、💢 瞎写的地方，欢迎**光速打脸纠错** ✋，lu 起袖子提交 🔗**Pull Requests**进行修改，具体操作步骤可参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
+
+## 感谢
+
+首先十分感谢沐神**充满热爱的知识分享和不求回报的无私奉献**，沐神的精神时刻激励着我们认真做好这个学习笔记，同时我们炒鸡赞同沐神“**动手学**”的理念，为了完成这个项目，我们也尝试学习、融合并实践了很多技术栈，如版本控制系统、Linux 与云计算、静态页面托管部署、LaTex 公式语法、Mermaid 图绘制、Numpy、Pandas、Matplotlib 数据处理三剑客等等，在实践中学习，效果确实很好。
+
+其次感谢合作者小猪同学，如果没有他强大的学习能力 Boosting🚀 和快速的执行力，这个笔记项目很可能就夭折了。
+
+最后感谢践行“我为人人、人人为我”开源精神的广大开发者，得益于好用的各种工具和服务如：Markdown、Git、Github&Gitee Pages、Gitalk、Docsify 等等，大大减轻了繁重的工作量，使得这个笔记能以更好的效果呈现。
