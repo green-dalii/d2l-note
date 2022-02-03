@@ -2,11 +2,7 @@
 
 # 《动手学深度学习》课程笔记
 
-<!-- > 一个神奇的文档网站生成器。
-
-- 阅读舒适
-- 人人可参与
-- 众多主题 -->
+> <small>Author:  [小猪](https://gitee.com/yuliang-zhu) & Greener-Dalii</small>
 
 [GitHub](https://github.com/green-dalii/d2l-note)
 [Gitee](https://gitee.com/greener/d2l-note)
