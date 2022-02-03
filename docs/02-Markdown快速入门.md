@@ -14,16 +14,25 @@
 ### 扩展安装方法
 
 1. 首先打开 VSCode，为方便日后操作，切换为中文界面。点击`Ctrl+Shift+P`，输入`display`，选择`Configure Display Language`
+
    ![step1](https://code.visualstudio.com/assets/docs/getstarted/locales/configure-language-command.png)
+
 2. 接着点击`Install additional languages...`
+
    ![step2](https://code.visualstudio.com/assets/docs/getstarted/locales/installed-languages-list.png)
+
 3. 在左侧扩展商店选择`Chinese(Simplified)(简体中文)`，点击安装
+
    ![step3](Images/git_tutorials_1.png)
+
 4. 重复第 2 步，选择`zh-cn`重启 VSCode，便切换为中文界面
 5. 继续在左侧打开扩展商店，在顶部搜素框输入`markdown`，安装如下扩展：
+
    ![step3](Images/git_tutorials_2.png)
+
 6. 同理再安装`Markdown Preview Mermaid Support`插件
 7. 安装完毕后，在编写 Markdown 文档时，点击顶部“放大镜 🔍”图标，便可在右侧开启实时预览功能
+
    ![step4](Images/git_tutorials_3.png)
 
 ## 基础语法
