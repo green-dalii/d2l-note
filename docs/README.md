@@ -1,6 +1,6 @@
 ![d2l](https://zh-v2.d2l.ai/_static/logo-with-text.png)
 
-# 《动手学深度学习》的课程笔记
+# 《动手学深度学习》课程笔记
 
 ## 使用说明
 
