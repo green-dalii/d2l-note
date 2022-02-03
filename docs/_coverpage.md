@@ -9,4 +9,5 @@
 - 众多主题 -->
 
 [GitHub](https://github.com/green-dalii/d2l-note)
-[Get Started](README)
+[Gitee](https://gitee.com/greener/d2l-note)
+[开始阅读](README)
