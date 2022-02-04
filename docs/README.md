@@ -1,4 +1,4 @@
-![d2l](https://zh-v2.d2l.ai/_static/logo-with-text.png)
+![d2l](Images/logo.png)
 
 # 《动手学深度学习》课程笔记
 

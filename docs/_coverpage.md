@@ -1,4 +1,4 @@
-![logo](https://zh-v2.d2l.ai/_static/logo-with-text.png ':size=50%')
+![logo](Images/logo.png ':size=50%')
 
 # 《动手学深度学习》课程笔记
 
@@ -7,3 +7,4 @@
 [GitHub](https://github.com/green-dalii/d2l-note)
 [Gitee](https://gitee.com/greener/d2l-note)
 [开始阅读](README)
+
