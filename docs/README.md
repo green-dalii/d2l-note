@@ -4,7 +4,7 @@
 
 ## 使用说明
 
-- 本项目使用[Docsify](https://docsify.js.org/)技术生成，并托管在[GitHub Pages](https://green-dalii.github.io/d2l-note)和 Gitee Pages[进行中..]
+- 本项目使用[Docsify](https://docsify.js.org/)技术生成，并托管在[GitHub Pages](https://green-dalii.github.io/d2l-note)和 [Gitee Pages](https://greener.gitee.io/d2l-note)
 - 编辑时为方便索引使用，每节课的笔记文件名必须规范为 **“序号-本节课程视频名称”** （如：“ _08-线性回归 + 基础优化算法 .md_ ” ）
 - 所有笔记将采用**Markdown**格式进行编排,推荐使用**VSCode**来编写。
   - [Markdown 快速入门点这里](02-Markdown快速入门.md)，[Markdown 官方教程](https://markdown.com.cn/)
