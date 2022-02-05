@@ -137,6 +137,10 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size, resize=224)
 
 lr, num_epochs = 0.01, 10
 d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr, d2l.try_gpu())
+
+# Out:
+# loss 0.333, train acc 0.877, test acc 0.879
+# 4152.2 examples/sec on cuda:0
 ```
 
 ![output_alexnet](https://zh.d2l.ai/_images/output_alexnet_180871_32_1.svg)
