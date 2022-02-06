@@ -1,4 +1,4 @@
-# 番外 04 - Kaggle竞赛实践经验
+# 番外04-Kaggle竞赛实践经验
 
 ## 竞赛1：California-House-Price
 
