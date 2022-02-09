@@ -113,6 +113,29 @@ data[data['Type'].isin(['apple','pear'])]
 sns.catplot(y="Type",x="Sold Price",kind="violin",data=type_df,height=5,aspect=3)
 ```
 
+### 数据预处理
+
+一般数据包含的类型有连续型数值（如价格、温度）、离散型数值（如年份、邮编）、描述型短字符串（如性别、地区）、叙述型长文本（如概述、新闻、对话），预处理时要区别对待。
+
+#### 区分数值类和非数值类，并对数值类进行归一化
+
+```python
+numeric_features = all_features.dtypes[all_features.dtypes != 'object'].index
+all_features[numeric_features] = all_features[numeric_features].apply(
+    lambda x: (x - x.mean()) / (x.std()))
+all_features[numeric_features] = all_features[numeric_features].fillna(0)
+```
+
+#### 对于离散型数值、描述型短字符，如果各列的种类不多，可采用独热编码（但如果种类很多，则不能盲目使用，否则会撑爆内存）
+
+```python
+no_numeric_features = all_features.dtypes[all_features.dtypes == 'object'].index
+
+all_features[no_numeric_features] = pd.get_dummies(all_features[no_numeric_features], dummy_na=True)
+```
+
+#### 对于种类多、不能采用独热编码的数据，可以采用`scikit-learn.preprocessing`的一系列特征工程的方法。参考文档👉[API](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing)
+
 ### 神经网络相关
 
 #### 由浅入深，奥卡姆定理
