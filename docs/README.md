@@ -85,6 +85,7 @@
 ### 论文及电子书下载
 
 - [arXiv](https://arxiv.org/)：arXiv 是康奈尔大学开放的一个免费的学术分发服务和开放获取档案，是世界上最大的预印本网站，30 年来造福了无数科研工作者，收录了物理学、数学、计算机科学、定量生物学、定量金融学、统计学、电气工程和系统科学以及经济学等领域的 200 万+篇学术文章。
+- [ar5iv](https://ar5iv.org/)：可以将arXiv发表的论文一键转换成阅读性超棒的网页直接浏览而无需下载，比如以论文《Deep Residual Learning for Image Recognition》为例，直接将它的arXiv链接`https://arxiv.org/abs/1512.03385`中的arxiv改为**ar5iv**即`https://ar5iv.org/html/1512.03385`即可在线阅读。
 - [Sci-hub](https://sci-hub.ru/)：一个俄罗斯人开发的学术检索平台，通过输入文献的链接或者 DOI 或者 PubMed 号可以下载几乎所有 SCI 论文（只要不用万恶的知网 👿 我们就是好朋友 👋）。由于触动各大出版商利益，经常被封域名，可以在这里查询镜像 👉[查询](https://ifish.fun/paper/scihub)，[🌏 镜像 1](https://sci-hub.st/)、[🌏 镜像 2](https://sci-hub.ru/)、[🌏 镜像 3](https://sci-hub.et-fine.com/)
 - [Z-librery](https://zh.bg1lib.org/)：全球最大的数字图书馆项目，可以下载到**几乎任何**的电子书、教材等等。
 
