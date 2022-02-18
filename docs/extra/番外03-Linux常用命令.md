@@ -53,6 +53,22 @@ swapoff -v /swapfile
 rm /swapfile
 ```
 
+## 查看目录大小
+
+```bash
+# 查看根目录/，递归1层
+du -h --max-depth=1 /
+```
+
+## 删除文件或文件夹
+
+```bash
+# 删除文件夹
+rm -rf xxx
+# 删除文件夹下文件
+rm -rf abc/def/*.jpg
+```
+
 ## 参考链接
 
 - [常用Linux命令](https://www.autodl.com/docs/linux/)
