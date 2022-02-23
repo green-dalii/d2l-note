@@ -2,7 +2,7 @@
 
 ---
 
-## 1.Git 的安装与 VSCode 集成配置
+## Git 的安装与 VSCode 集成配置
 
 - Git 下载地址：https://git-scm.com/downloads
 - 安装完毕后打开命令提示符（CMD）或终端(Terminal)，输入：`git --version`，若能正常显示 Git 版本，则代表安装成功
@@ -10,7 +10,7 @@
 
 ![vscode](https://user-images.githubusercontent.com/1217769/29250412-5b01d194-8042-11e7-90e6-a03e0d78af41.gif)
 
-## 2.Git 基本语法
+## Git 基本语法
 
 1. **初始化本地仓库**：用于创建本地新仓库
 
@@ -27,7 +27,7 @@
    3. 命令执行完毕后，该文件夹下会生成与远程仓库一致的所有文件
 3. **其他命令**：由于后期主要涉及在 VSCode 上进行 UI 操作，其他命令请参考本文第四节：**参考资源**
 
-## 3.使用 Gitee 进行多人在线协同
+## 使用 Gitee 进行多人在线协同
 
 ### 方法一：贡献者协同（Pull Requests）[💁‍♂️ 推荐]
 
@@ -82,7 +82,7 @@ Gitee 轻量级 PR（Gitee Pull Request Lite）是一种 无须 Fork 仓库，�
 10. 至此对本地仓库的修改已生效，要使所有成员都能看到你的更改，还需要提交至远程仓库，方法为点击“同步更改”按钮
 11. 所有成员将会看到你的更改
 
-## 4.参考资源
+## 参考资源
 
 1. [Git 大全](https://gitee.com/all-about-git)
 2. [菜鸟 Git 教程](https://www.runoob.com/git/git-tutorial.html)
