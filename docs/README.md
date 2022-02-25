@@ -110,7 +110,7 @@
 - **PaddlePaddle**：飞浆，百度出品，代码开发实现出色，贾扬清大神高度评价，不过文档有些混乱，推广有些“用力过猛”👉[项目主页](https://www.paddlepaddle.org.cn/)
 - **MegEngine**：天元，旷世科技出品 👉[项目主页](https://megengine.org.cn/)
 
-> 这里分享一篇Oneflow创始人袁进辉的一篇不同框架的综述比较文章👉[深度学习框架的soul](https://zhuanlan.zhihu.com/p/121834310)
+> 这里分享一篇Oneflow创始人袁进辉的一篇不同框架的综述比较文章👉[深度学习框架的灵魂](https://zhuanlan.zhihu.com/p/121834310)
 
 ## 深度学习计算平台
 
@@ -127,7 +127,7 @@
 
 <!-- ![create_issue](Images/create_issue.png) -->
 
-如果觉得笔记内容有写得实在 👁 不顺眼、❌ 有错、💢 瞎写的地方，欢迎**光速打脸纠错** ✋，lu 起袖子提交 🔗**Pull Requests**进行修改，具体操作步骤可参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
+如果觉得笔记内容有写得实在 👁 不顺眼、❌ 有错、💢 瞎写的地方，欢迎**光速打脸纠错** ✋提交 🔗**Pull Requests**进行修改，具体操作步骤可参考第三章内容 👉[Git 快速入门](03-Git快速入门.md)
 
 ## 感谢
 
