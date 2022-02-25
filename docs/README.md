@@ -110,6 +110,8 @@
 - **PaddlePaddle**：飞浆，百度出品，代码开发实现出色，贾扬清大神高度评价，不过文档有些混乱，推广有些“用力过猛”👉[项目主页](https://www.paddlepaddle.org.cn/)
 - **MegEngine**：天元，旷世科技出品 👉[项目主页](https://megengine.org.cn/)
 
+> 这里分享一篇Oneflow创始人袁进辉的一篇不同框架的综述比较文章👉[深度学习框架的灵魂](https://zhuanlan.zhihu.com/p/121834310)
+
 ## 深度学习计算平台
 
 - [Amazon Sagemaker Studio Lab（🙌Free GPU!）](https://studiolab.sagemaker.aws/)👉[使用说明](https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/sagemaker.html)
