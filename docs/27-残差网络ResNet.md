@@ -326,6 +326,8 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr, d2l.try_gpu())
 
 ![output_densenet](https://zh.d2l.ai/_images/output_densenet_e82156_102_1.svg)
 
+---
+
 ## Q&A🤓
 
 **Q：为什么$f(x)=x+g(x)$就能保证结果至少不会变差？假如$g(x)$变得更差呢？**
